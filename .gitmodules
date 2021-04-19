@@ -1,0 +1,3 @@
+[submodule "discourse-rails"]
+	path = discourse-rails
+	url = https://github.com/jpersons24/discourse-rails
