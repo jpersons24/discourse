@@ -9,7 +9,7 @@ function SignUp() {
 
     function handleSubmit(e){
         e.preventDefault()
-        return(hi)
+        return(<div>hello</div>)
     }
     return (
         <div>
@@ -37,18 +37,16 @@ function SignUp() {
         {errors.map((error) => {
           return <p key={error}>{error}</p>;
         })}
-           <Button type='submit'>
-      
-             <Button.Content>Sign Up</Button.Content>
-            </Button>
+           <button type='submit'>
+                Sign Up
+            </button>
              </form>
 
-             {/* <Link to="/login">
-         <h5>Login?</h5>
+    {/* <Link to="/login">     <h5>Login?</h5>
          </Link> */}
            
        
-    );
+  
         </div>
     )
 }

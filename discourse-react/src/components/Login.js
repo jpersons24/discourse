@@ -24,7 +24,7 @@ function Login(user,setUser){
 
     return (
       <div className="login">
-        <Header as='h1' >Sign In</Header>
+        <h1>Login</h1>
         <form 
           onSubmit={handleSubmit}
           href="/home"
@@ -44,17 +44,10 @@ function Login(user,setUser){
               placeholder="Password" 
               onChange={(e) => (setPassword(e.target.value))} 
             />
-          {/* <Link to="/home">
-
-          <Button animated
-            type="submit"
-            className="login-button">
-              <Button.Content visible>Login</Button.Content>
-              <Button.Content hidden>
-              <Icon name='fire' />
-            </Button.Content>
-          </Button>
-          </Link> */}
+            <button type='submit'>
+                 Login            
+            </button>
+        
         </form>
     </div>
     ) 
