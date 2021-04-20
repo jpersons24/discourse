@@ -18,7 +18,7 @@ function App(){
           <ChatComponent currentUser={currentUser}/>
         </Route>
         <Route exact path = "/login">
-          <Login/>
+          <Login currentUser={currentUser} setCurrentUser={setCurrentUser}/>
         </Route>
         <Route exact path = "/signup">
           <SignUp currentUser={currentUser} setCurrentUser={setCurrentUser}/>

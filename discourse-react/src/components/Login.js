@@ -1,55 +1,71 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useHistory } from "react-router-dom";
 
 
 
 
-function Login(user,setUser){
-  const [username, setUsername] = useState("")
-  const [password, setPassword] = useState("")
+function Login({ currentUser,setCurrentUser }){
+  const history = useHistory();
+  const [formData,setFormData] = useState({
+    username: "",
+    password: "",
+  });
   const [loggedIn, setLoggedIn] = useState(false)
   // const [user, setUser] = useState([])
- 
 
+  function handleChange(e) {
+    setFormData({ ...formData, [e.target.name]: e.target.value })
+    console.log(e.target.value)
+  }
  
   function handleSubmit(e){
     e.preventDefault()
-    console.log(user)
-  
-    fetch('http://localhost:3000/users')
-    .then(res => res.json())
-    .then(users => setUser(users[0]))
     
-  }  
+
+    const user = {
+      username: formData.username,
+      password: formData.password,
+    }
+  
+    fetch('http://localhost:3001/login', {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(user)
+    })
+    .then(res => res.json())
+    .then(user => {
+      setCurrentUser(user)
+      history.push("/chat")
+    })
+  }
+
+
+    
 
     return (
       <div className="login">
         <h1>Login</h1>
-        <form 
-          onSubmit={handleSubmit}
-          href="/home"
-          className="login-form"
-        >
+        <form onSubmit={handleSubmit}>
             <input 
-              type="text"
-              value={username}
-              id="username"
-              placeholder="Email"
-              onChange={(e) => setUsername(e.target.value)}
+              type="input"
+              value={formData.username}
+              name="username"
+              placeholder="Username"
+              onChange={handleChange}
             />
             <input
               type="password"
-              value={password}
-              id="password"
+              value={formData.password}
+              name="password"
               placeholder="Password" 
-              onChange={(e) => (setPassword(e.target.value))} 
+              onChange={handleChange} 
             />
             <button type='submit'>
                  Login            
             </button>
-        <Link to = "/signup">
-                Sign Up?
-        </Link>
+          <Link to="/signup">
+            Sign Up?
+          </Link>
         
         </form>
     </div>
