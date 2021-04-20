@@ -1,5 +1,5 @@
 import React, {useState} from 'react'
-
+import { Link } from "react-router-dom";
 function SignUp() {
     const [formData,setFormData] = useState({
         username: "" ,
@@ -42,9 +42,9 @@ function SignUp() {
             </button>
              </form>
 
-    {/* <Link to="/login">     <h5>Login?</h5>
-         </Link> */}
-           
+            <Link to = "/">
+                Login 
+            </Link>
        
   
         </div>

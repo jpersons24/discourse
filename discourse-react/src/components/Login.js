@@ -47,6 +47,9 @@ function Login(user,setUser){
             <button type='submit'>
                  Login            
             </button>
+        <Link to = "/signup">
+                Sign Up?
+        </Link>
         
         </form>
     </div>
