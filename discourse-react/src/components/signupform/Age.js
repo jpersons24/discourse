@@ -8,10 +8,7 @@ function Age({ formData, handleChange }){
                 name="age" 
                 value={formData.age}
                 onChange={handleChange}
-            />
-            {/* <button onClick={setStep(step - 1)}>Previous<button/>
-            <button onClick={setStep(step + 1)}>Next<button/> */}
-            
+            />          
         </div>
     )
 };
