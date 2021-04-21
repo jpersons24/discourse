@@ -2,13 +2,12 @@ import React, {useState} from 'react'
 import { Link, useHistory } from "react-router-dom";
 
 
-function SignUp({currentUser, setCurrentUser}) {
-    const [formData,setFormData] = useState({
-        username: "" ,
-        password: ""
-    })
+function SignUp({currentUser, setCurrentUser, formData, handleChange, currentStep, setCurrentStep}) {
+    
     const [errors, setErrors] = useState([]);
     const history = useHistory()
+
+    console.log(formData)
 
     function handleSubmit(e){
         e.preventDefault()
@@ -27,18 +26,17 @@ function SignUp({currentUser, setCurrentUser}) {
         })
         .then(response => response.json())
         .then(data => {
+            if (data.status === false) {
+                setErrors(data.message)
+            }
             setCurrentUser(data)
             console.log('Success:', data);
             // after signup, push user to 1st questionaire
-            // history.push('/ques1')
+            setCurrentStep(1)
         })
     }
 
-    function handleChange(e){
-        setFormData({...formData,
-            [e.target.name]: e.target.value,
-        })
-    }
+    
 
     return (
         <div>
@@ -62,19 +60,18 @@ function SignUp({currentUser, setCurrentUser}) {
                 value={formData.password}
                 onChange={handleChange}
             />
-    
-            {errors.map((error) => {
-            return <p key={error}>{error}</p>;
-            })}
                 <button type='submit'>
                     Sign Up
                 </button>
                 </form>
 
+            { errors ? <div> {errors} </div> : null }
+
                 <Link to = "/">
                     Login 
                 </Link>
-        
+
+            
   
         </div>
     )
