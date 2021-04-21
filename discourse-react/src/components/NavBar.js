@@ -14,7 +14,7 @@ function NavBar({ currentUser }) {
    
    return(
       <div>
-         <button onClick={handleClick}>Logout</button>
+        {currentUser ?<button onClick={handleClick}>Logout</button> :<h1>Welcome</h1> } 
       </div>
    )
 }

@@ -19,9 +19,9 @@ function Form() {
   // handle change
   function handleChange(e) {
     setFormData({ ...formData, [e.target.name]: e.target.value });
-    console.log(formData);
+   
   }
-
+  console.log(formData);
   // handle submit
   // form submit button displayed on final step only
   // function handleSubmit(e) {
@@ -29,51 +29,37 @@ function Form() {
   //    console.log(e.target)
   // };
 
-  function handleNext() {
-    setCurrentStep(currentStep + 1);
+  function handleNext(e) {
+    e.preventDefault()
+    setCurrentStep((currentStep ) => currentStep + 1);
   }
 
-  // handle next click
-  // logic to increase currentStep state by 1
-  function next() {
-    //  setCurrentStep(currentStep);
-    if (currentStep < 4) {
-      return (
-        <>
-          <button onClick={handleNext}>Next</button>
-        </>
-      );
-    } else {
-      return null;
-    }
-  }
+ 
+  
 
-  function handlePrevious() {
+  function handlePrevious(e) {
+    e.preventDefault()
     setCurrentStep(currentStep - 1);
   }
 
-  // handle previous click
-  // logic to decrease currentStep state by 1
-  const previousButton = function previous() {
-    //  setCurrentStep(currentStep);
-    if (currentStep !== 1) {
-      return (
-        <>
-          <button onClick={handlePrevious}>Previous</button>
-        </>
-      );
-    } else {
-      return null;
-    }
-  };
+function handleSubmit(e){
+  return(<div>hi</div>)
+}
 
   return (
     <div>
       <h1>Info Form</h1>
-      <form>
-        <Age formData={formData} handleChange={handleChange} />
+      <form onSubmit = {handleSubmit}>
+      {currentStep === 1 ? <Age formData={formData} handleChange={handleChange} /> : null}
+      {currentStep === 2 ? <Gender formData={formData} handleChange={handleChange}/> : null}
+      {currentStep === 3 ?  <Race formData={formData} handleChange={handleChange}/> : null}
+      {currentStep === 4 ?  <SexualOrientation formData={formData} handleChange={handleChange}/> : null}
+       
         {/* Step2 */}
         {/* Step3 */}
+        {currentStep !== 1 ? <button onClick={handlePrevious}>Previous</button> : null}
+        {currentStep < 4 ?  <button onClick={handleNext}>Next</button> : null}
+        {currentStep === 4 ? <button type = "submit">Submit your form</button> : null }
       </form>
 
       

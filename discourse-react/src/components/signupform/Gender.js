@@ -1,9 +1,10 @@
-function Gender(){
+function Gender({handleChange, formData}){
     
     return(
         <div>
              <label for="gender">What is your gender?</label>
-                <select  name="gender" id="gender">
+                <select name="gender" id="gender"  onChange={handleChange}>
+                <option value="" selected disabled hidden>Choose here</option>
                     <option value="man">Man</option>
                     <option value="woman">Woman</option>
                     <option value="non-binary">Non-binary</option>

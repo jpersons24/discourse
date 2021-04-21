@@ -17,7 +17,7 @@ function ChatComponent({ currentUser }) {
 
   const chatClient = StreamChat.getInstance("9tbsyvz84awf");
   // const userToken =
-  //   "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoiY3VybHktYmxvY2stOCJ9.tN_s0rO5Lm765N_zuwXJRFzBmUMfksfbEk8LS3ueHkg";
+    // "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoiY3VybHktYmxvY2stOCJ9.tN_s0rO5Lm765N_zuwXJRFzBmUMfksfbEk8LS3ueHkg";
   const userToken = currentUser.token;
 
   chatClient.connectUser(
@@ -30,7 +30,7 @@ function ChatComponent({ currentUser }) {
     userToken
   );
 
-  const channel = chatClient.channel("messaging", "curly-block-8", {
+  const channel = chatClient.channel("messaging", {members:["conortest5","conortest1"]}, {
     // add as many custom fields as you'd like
     image: "https://www.drupal.org/files/project-images/react.png",
     name: "Talk about React",
