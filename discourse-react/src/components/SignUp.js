@@ -28,8 +28,9 @@ function SignUp({currentUser, setCurrentUser}) {
         .then(response => response.json())
         .then(data => {
             setCurrentUser(data)
-        console.log('Success:', data);
-        history.push('/chat')
+            console.log('Success:', data);
+            // after signup, push user to 1st questionaire
+            // history.push('/ques1')
         })
     }
 

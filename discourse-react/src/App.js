@@ -4,7 +4,8 @@ import Login from "./components/Login.js";
 import LandingPage from './components/LandingPage.js'
 import SignUp from "./components/SignUp.js";
 import NavBar from './components/NavBar';
-import {Switch,Route} from 'react-router-dom'
+import Form from './components/signupform/Form';
+import {Switch,Route} from 'react-router-dom';
 function App(){
   const [currentUser, setCurrentUser] = useState(null)
 
@@ -23,6 +24,9 @@ function App(){
         </Route>
         <Route exact path = "/signup">
           <SignUp currentUser={currentUser} setCurrentUser={setCurrentUser}/>
+        </Route>
+        <Route exact path="/info">
+          <Form />
         </Route>
       </Switch>
     </div>
