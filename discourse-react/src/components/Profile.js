@@ -11,16 +11,16 @@ const Profile = ({ currentUser, matchedUser, setMatchedUser }) => {
     fetch(`http://localhost:3001/users`)
       .then((resp) => resp.json())
       .then((users) => {
-        console.log(users)
+        // console.log(users)
         const filteredUsers = users.filter((user) => {
           return user.is_chatting === false;
         });
-        console.log(filteredUsers);
+        // console.log(filteredUsers);
         setAllUsers(filteredUsers);
       });
   }, []);
 
-  console.log(allUsers)
+  // console.log(allUsers)
   // debugger;
 
   const newConnections = allUsers.filter(
@@ -105,7 +105,6 @@ const Profile = ({ currentUser, matchedUser, setMatchedUser }) => {
         .then(response => response.json())
         .then((data) => {
           console.log(data)
-          // setCurrentUser(data)
         })
   };
 

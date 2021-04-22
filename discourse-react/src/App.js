@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import './App.css';
 import ChatComponent from "./components/ChatComponent.js";
 import Login from "./components/Login.js";
 import LandingPage from "./components/LandingPage.js";
@@ -23,7 +24,7 @@ function App() {
   // }, []);
 
   return (
-    <div>
+    <div class="app-wrapper">
       <NavBar currentUser={currentUser} />
       <Switch>
         <Route exact path="/">

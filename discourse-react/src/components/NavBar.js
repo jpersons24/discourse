@@ -11,8 +11,22 @@ function NavBar({ currentUser }) {
    }
    
    return(
-      <div>
-        {currentUser ?<button onClick={handleClick}>Logout</button> :<h1>Welcome</h1> } 
+      <div class="nav-wrapper">
+         
+            {currentUser ?<button onClick={handleClick}>Logout</button> : <div> Discourse </div>}
+         
+
+         <div>
+            Dashboard 
+         </div>
+
+         <div>
+            About
+         </div>
+
+         <div>
+            Chat
+         </div>
       </div>
    )
 }
