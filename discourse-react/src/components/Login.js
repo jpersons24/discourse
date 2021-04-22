@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Link, useHistory } from "react-router-dom";
 
-function Login({ currentUser, setCurrentUser }) {
+function Login({ currentUser, setCurrentUser, setHasActiveChat }) {
   const history = useHistory();
   const [formData, setFormData] = useState({
     username: "",
@@ -31,6 +31,7 @@ function Login({ currentUser, setCurrentUser }) {
       .then((res) => res.json())
       .then((user) => {
         setCurrentUser(user);
+        setHasActiveChat(user.user.is_chatting)
         history.push("/profile");
       });
   }

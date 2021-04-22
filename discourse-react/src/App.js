@@ -10,6 +10,7 @@ import { Switch, Route } from "react-router-dom";
 function App() {
   const [currentUser, setCurrentUser] = useState(null);
   const [matchedUser, setMatchedUser] = useState(null);
+  const [hasActiveChat, setHasActiveChat] = useState(false)
 
   // useEffect(() => {
   //   fetch(`http://localhost:3001/users`)
@@ -38,7 +39,7 @@ function App() {
           />
         </Route>
         <Route exact path="/login">
-          <Login currentUser={currentUser} setCurrentUser={setCurrentUser} />
+          <Login setHasActiveChat = {setHasActiveChat} currentUser={currentUser} setCurrentUser={setCurrentUser} />
         </Route>
         <Route exact path="/signup">
           <Form currentUser={currentUser} setCurrentUser={setCurrentUser} />
@@ -48,6 +49,8 @@ function App() {
             currentUser={currentUser}
             matchedUser={matchedUser}
             setMatchedUser={setMatchedUser}
+            setHasActiveChat = {setHasActiveChat}
+            hasActiveChat = {hasActiveChat}
           />
         </Route>
       </Switch>

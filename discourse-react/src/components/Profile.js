@@ -1,12 +1,16 @@
 import React, { useState, useEffect } from "react";
 import { useHistory } from "react-router";
 
-const Profile = ({ currentUser, matchedUser, setMatchedUser }) => {
+const Profile = ({ currentUser, matchedUser, setMatchedUser,setHasActiveChat, hasActiveChat }) => {
   const [matchArray, setMatchArray] = useState([]);
+  // const [hasActiveChat, setHasActiveChat] = useState(false)
   const [allUsers, setAllUsers] = useState([]);
   const history = useHistory();
   console.log(currentUser)
 
+  if (currentUser.user.is_chatting){
+    setHasActiveChat(true)
+  }
   useEffect(() => {
     fetch(`http://localhost:3001/users`)
       .then((resp) => resp.json())
@@ -20,8 +24,7 @@ const Profile = ({ currentUser, matchedUser, setMatchedUser }) => {
       });
   }, []);
 
-  // console.log(allUsers)
-  // debugger;
+
 
   const newConnections = allUsers.filter(
     (user) => !currentUser.user.previous_matches.includes(user.username)
@@ -30,8 +33,13 @@ const Profile = ({ currentUser, matchedUser, setMatchedUser }) => {
   console.log("new connections", newConnections);
 
   // debugger
-
+    
   const matchMaker = () => {
+    console.log(currentUser.user.previous_matches[0])
+    if(currentUser.user.previous_matches.length > 0) {
+      setMatchedUser({username:currentUser.user.previous_matches[0]})
+  return
+    }
     let collectedArray = [];
     for (let i = 0; i < newConnections.length; i++) {
       let beliefCounter = 0;
@@ -83,6 +91,7 @@ const Profile = ({ currentUser, matchedUser, setMatchedUser }) => {
       if (beliefCounter >= 3 && interestCounter >= 3) {
         collectedArray.push(newConnections[i]);
       }
+     
     }
     console.log(collectedArray);
     setMatchedUser(collectedArray[0]);
@@ -109,8 +118,9 @@ const Profile = ({ currentUser, matchedUser, setMatchedUser }) => {
   };
 
   console.log(matchedUser)
-
+  console.log(hasActiveChat)
   function helpTest() {
+    console.log(matchedUser)
     // setTimeout(() => {
     if (matchedUser) {
         // /PATCH /user/:id (one for each user)
@@ -118,37 +128,40 @@ const Profile = ({ currentUser, matchedUser, setMatchedUser }) => {
         setUserChatting(matchedUser, currentUser.user)
         // push matchedUser into previousMatched array
         // helpermethod()
-        history.push("/chat");
+        // history.push("/chat");
+        setHasActiveChat(true)
     } else {
         return alert("Sorry no matches for you")
     }
   }
-  
+  useEffect(() => {
 
-  const handleClick = () => {
-    matchMaker();
+    matchMaker()
+   } , []);
+   const handleFindChat = () => {
+     // matchMaker();
+     
+     helpTest()
+     
+    };
+    // 
+    
+    const handleEnterChat = () => {
+      // matchMaker()
+      history.push("/chat");
+    }
     console.log(matchedUser)
-    helpTest()
-    // setTimeout(() => {
-    //   if (matchedUser) {
-    //     // /PATCH /user/:id (one for each user)
-    //     setUserChatting(currentUser.user, matchedUser)
-    //     setUserChatting(matchedUser, currentUser.user)
-    //     // push matchedUser into previousMatched array
-    //     // helpermethod()
-    //     history.push("/chat");
-    //   } else {
-    //     // return "Nobody matched with you loser"
-    //     return alert("Sorry no matches for you")
-    //   }
-    // }, 3000)
-  };
+
 
   return (
+
+  
     <div>
       <h1>{currentUser.user.username}</h1>
-      <button onClick={handleClick}>Get Match</button>
+    {hasActiveChat ? <button onClick={handleEnterChat}>Enter Chat</button> :<button onClick={handleFindChat}>Get Match</button>}
     </div>
+
+
   );
 };
 
