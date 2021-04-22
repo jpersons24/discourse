@@ -29,22 +29,22 @@ const [active, setActive] = useState(false)
     city: "",
     political_party: "",
     religion: "",
-    pro_choice: false,
+    pro_choice: null,
     fav_sport: "",
     fav_cuisine: "",
     fav_book_genre: "", 
     fav_city: "",
     fav_movie_genre: "",
   });
+  console.log(formData)
+  console.log(currentUser)
 
-  // state for current step
   const [currentStep, setCurrentStep] = useState(0);
   const history = useHistory()
 
-  // handle change
   function handleChange(e) {
     setFormData({ ...formData, [e.target.name]: e.target.value });
-    console.log(e.target.value)
+    // console.log(formData)
   }
 
   function handleNext(e) {
@@ -79,32 +79,28 @@ function handleQuestionnaire(e){
 
   return (
     <div>
-      <h1>Info Form</h1>
+      {currentStep > 0 ? <h1>Info Form</h1> : null}
         {currentStep === 0 ? <SignUp formData={formData} handleChange={handleChange} currentStep={currentStep} setCurrentStep={setCurrentStep} currentUser={currentUser} setCurrentUser={setCurrentUser}/> : null}
-        <form onSubmit = {handleQuestionnaire}>
+        <form onSubmit={handleQuestionnaire}>
           {currentStep === 1 ? <Age formData={formData} handleChange={handleChange} /> : null}
           {currentStep === 2 ? <Gender formData={formData} handleChange={handleChange}/> : null}
           {currentStep === 3 ? <Race formData={formData} handleChange={handleChange}/> : null}
           {currentStep === 4 ? <SexualOrientation formData={formData} handleChange={handleChange}/> : null}
           {currentStep === 5 ? <Religion formData={formData} handleChange={handleChange}/> : null}
-          {currentStep === 6 ? <ProChoice formData={formData} handleChange={handleChange}/> : null}
-          {currentStep === 7 ? <City formData={formData} handleChange={handleChange}/> : null}
-          {currentStep === 8 ? <FavSport formData={formData} handleChange={handleChange}/> : null}
-          {currentStep === 9 ? <PoliticalParty formData={formData} handleChange={handleChange}/> : null}
-          {currentStep === 10 ? <FavCuisine formData={formData} handleChange={handleChange}/> : null}
-          {currentStep === 11 ? <FavBook formData={formData} handleChange={handleChange}/> : null}
-          {currentStep === 12 ? <FavMovie formData={formData} handleChange={handleChange}/> : null}
-          {currentStep === 13 ? <FavCity formData={formData} handleChange={handleChange}/> : null}
+          {currentStep === 6 ? <ProChoice handleChange={handleChange}/> : null}
+          {currentStep === 7 ? <City handleChange={handleChange}/> : null}
+          {currentStep === 8 ? <FavSport  handleChange={handleChange}/> : null}
+          {currentStep === 9 ? <PoliticalParty handleChange={handleChange}/> : null}
+          {currentStep === 10 ? <FavCuisine handleChange={handleChange}/> : null}
+          {currentStep === 11 ? <FavBook handleChange={handleChange}/> : null}
+          {currentStep === 12 ? <FavMovie handleChange={handleChange}/> : null}
+          {currentStep === 13 ? <FavCity handleChange={handleChange}/> : null}
 
         
           {currentStep > 1 ? <button onClick={handlePrevious}>Previous</button> : null}
           {currentStep < 13 && currentStep > 0 ?  <button onClick={handleNext}>Next</button> : null}
           {currentStep === 13 ? <button type = "submit">Submit your form</button> : null }
         </form>
-
-      
-      {/* {nextButton}
-      {previousButton} */}
     </div>
   );
 }

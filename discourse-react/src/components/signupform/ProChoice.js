@@ -1,26 +1,16 @@
-import { useState } from 'react';
+function ProChoice({ handleChange}) {
 
-function ProChoice({ setFormData, formData, handleChange}) {
-
-   const [clicked, setClicked] = useState(false);
-
-   function handleClick(e) {
-      setClicked((clicked) => !clicked)
-      console.log(e.target)
-      setFormData({ ...formData, [e.target.name]: clicked})
-   }
-
-   
 
    return (
       <div>
-            <div>
-                <input type="checkbox" onChange={} id="pro_choice" name="pro_choice" value={formData.pro_choice} />
-                    
-                <label for="pro_choice">Pro Choice?</label>
-            </div>
-
-            
+         <div>
+            <label>Pro Choice</label>
+            <input type="radio" name="pro_choice" id="pro_choice" value={true} onChange={handleChange}/> 
+         </div>
+         <div>
+            <label>Pro Life</label>
+            <input type="radio" name="pro_choice" id="pro_life" value={false} onChange={handleChange} />
+         </div>
       </div>
    )
 }

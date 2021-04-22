@@ -1,7 +1,7 @@
 function FavMovie({handleChange}) {
    return (
       <div>
-         <label for="fav_movie_genre">Favorite Book Genre:</label>
+         <label for="fav_movie_genre">Favorite Movie Genre:</label>
          <select onChange={handleChange} name="fav_movie_genre" id="favorite_cuisine">
             <option value="" selected disabled hidden>Choose here</option>
             <option value="Horror">Horror</option>

@@ -1,4 +1,4 @@
-function City({ formData, handleChange }) {
+function City({ handleChange }) {
    return(
       <div>
          <label for="city">What city are you in?</label>
