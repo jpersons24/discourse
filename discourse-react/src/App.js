@@ -25,7 +25,6 @@ function App() {
 
   return (
     <div class="app-wrapper">
-      <NavBar currentUser={currentUser} />
       <Switch>
         <Route exact path="/">
           <LandingPage />
@@ -36,6 +35,7 @@ function App() {
             matchedUser={matchedUser}
             setMatchedUser={setMatchedUser}
           />
+          <NavBar currentUser={currentUser} />
         </Route>
         <Route exact path="/login">
           <Login currentUser={currentUser} setCurrentUser={setCurrentUser} />
@@ -49,6 +49,7 @@ function App() {
             matchedUser={matchedUser}
             setMatchedUser={setMatchedUser}
           />
+          <NavBar currentUser={currentUser} />
         </Route>
       </Switch>
     </div>

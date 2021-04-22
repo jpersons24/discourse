@@ -82,9 +82,9 @@ function handleQuestionnaire(e){
       {currentStep > 0 ? <h1>Info Form</h1> : null}
         {currentStep === 0 ? <SignUp formData={formData} handleChange={handleChange} currentStep={currentStep} setCurrentStep={setCurrentStep} currentUser={currentUser} setCurrentUser={setCurrentUser}/> : null}
         <form onSubmit={handleQuestionnaire}>
-          {currentStep === 1 ? <Age formData={formData} handleChange={handleChange} /> : null}
-          {currentStep === 2 ? <Gender formData={formData} handleChange={handleChange}/> : null}
-          {currentStep === 3 ? <Race formData={formData} handleChange={handleChange}/> : null}
+          {currentStep === 1 ? <Age formData={formData} handleChange={handleChange} handlePrevious={handlePrevious} handleNext={handleNext} currentStep={currentStep}/> : null}
+          {currentStep === 2 ? <Gender formData={formData} handleChange={handleChange} handlePrevious={handlePrevious} handleNext={handleNext} currentStep={currentStep}/> : null}
+          {currentStep === 3 ? <Race formData={formData} handleChange={handleChange} handlePrevious={handlePrevious} handleNext={handleNext} currentStep={currentStep}/> : null}
           {currentStep === 4 ? <SexualOrientation formData={formData} handleChange={handleChange}/> : null}
           {currentStep === 5 ? <Religion formData={formData} handleChange={handleChange}/> : null}
           {currentStep === 6 ? <ProChoice handleChange={handleChange}/> : null}
@@ -97,8 +97,8 @@ function handleQuestionnaire(e){
           {currentStep === 13 ? <FavCity handleChange={handleChange}/> : null}
 
         
-          {currentStep > 1 ? <button onClick={handlePrevious}>Previous</button> : null}
-          {currentStep < 13 && currentStep > 0 ?  <button onClick={handleNext}>Next</button> : null}
+          {/* {currentStep > 1 ? <button onClick={handlePrevious}>Previous</button> : null}
+          {currentStep < 13 && currentStep > 0 ?  <button onClick={handleNext}>Next</button> : null} */}
           {currentStep === 13 ? <button type = "submit">Submit your form</button> : null }
         </form>
     </div>

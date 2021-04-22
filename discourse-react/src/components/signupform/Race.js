@@ -1,9 +1,12 @@
-function Race({handleChange}){
+function Race({handleChange, handlePrevious, handleNext, currentStep}){
     
     return(
-        <div>
-              <label for="race">Ethnicity/Race</label>
-                <select  name="race"  onChange={handleChange}>
+        <div class="login-wrapper">
+            <div class="question-box">
+
+              {/* <label for="race">Ethnicity/Race</label> */}
+              <p class="question" align="center" for="race">What is your race?</p>
+                <select class="un" name="race"  onChange={handleChange}>
                  
                  <option value="" selected disabled hidden>Choose here</option>
                     <option value="white">White</option>
@@ -13,8 +16,19 @@ function Race({handleChange}){
                     <option value= "hispanic">Hispanic</option>
                     <option value= "other">Other</option>
                 </select>
-                {/* <button onClick={setStep(step - 1)}>Previous<button/>
-                <button onClick={setStep(step + 1)}>Next<button/> */}
+                <div class="pre-next-buttons">
+                    {currentStep > 1 ? 
+                        <>
+                        <button class="submit previous" onClick={handlePrevious}>Previous</button>
+                        <button class="submit next" onClick={handleNext}>Next</button>
+                            
+                        </>     
+                        : 
+                        null
+                    }
+                    {/* {currentStep < 13 && currentStep > 0 ?  <button class="submit next" onClick={handleNext}>Next</button> : null} */}
+                </div>
+            </div>
         </div>
     )
 };
