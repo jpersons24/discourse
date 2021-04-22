@@ -6,20 +6,23 @@ const Profile = ({ currentUser, matchedUser, setMatchedUser,setHasActiveChat, ha
   // const [hasActiveChat, setHasActiveChat] = useState(false)
   const [allUsers, setAllUsers] = useState([]);
   const history = useHistory();
-  console.log(currentUser)
+  console.log("Current User", currentUser)
 
-  if (currentUser.user.is_chatting){
+  if (currentUser.user.is_chatting && hasActiveChat === false){
     setHasActiveChat(true)
   }
+
+  // if (allUsers.length > 0) {
+  //   matchMaker()
+  // }
+
   useEffect(() => {
     fetch(`http://localhost:3001/users`)
       .then((resp) => resp.json())
       .then((users) => {
-        // console.log(users)
         const filteredUsers = users.filter((user) => {
           return user.is_chatting === false;
         });
-        // console.log(filteredUsers);
         setAllUsers(filteredUsers);
       });
   }, []);
@@ -30,15 +33,14 @@ const Profile = ({ currentUser, matchedUser, setMatchedUser,setHasActiveChat, ha
     (user) => !currentUser.user.previous_matches.includes(user.username)
   );
 
-  console.log("new connections", newConnections);
-
   // debugger
     
   const matchMaker = () => {
+    console.log(allUsers)
     console.log(currentUser.user.previous_matches[0])
     if(currentUser.user.previous_matches.length > 0) {
       setMatchedUser({username:currentUser.user.previous_matches[0]})
-  return
+    return
     }
     let collectedArray = [];
     for (let i = 0; i < newConnections.length; i++) {
@@ -86,8 +88,7 @@ const Profile = ({ currentUser, matchedUser, setMatchedUser,setHasActiveChat, ha
       ) {
         interestCounter += 1;
       }
-      console.log(beliefCounter);
-      console.log(interestCounter);
+
       if (beliefCounter >= 3 && interestCounter >= 3) {
         collectedArray.push(newConnections[i]);
       }
@@ -96,6 +97,13 @@ const Profile = ({ currentUser, matchedUser, setMatchedUser,setHasActiveChat, ha
     console.log(collectedArray);
     setMatchedUser(collectedArray[0]);
   };
+
+
+  if (allUsers.length > 0 && matchedUser === null) {
+    matchMaker()
+  }
+
+  
 
   function setUserChatting(user1, user2) {
 
@@ -134,17 +142,17 @@ const Profile = ({ currentUser, matchedUser, setMatchedUser,setHasActiveChat, ha
         return alert("Sorry no matches for you")
     }
   }
-  useEffect(() => {
+  
+  // useEffect(() => {
+  //   matchMaker()
+  // }, []);
 
-    matchMaker()
-   } , []);
+
    const handleFindChat = () => {
      // matchMaker();
-     
      helpTest()
-     
     };
-    // 
+    
     
     const handleEnterChat = () => {
       // matchMaker()
