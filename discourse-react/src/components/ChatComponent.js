@@ -14,6 +14,7 @@ import "stream-chat-react/dist/css/index.css";
 
 function ChatComponent({ currentUser, matchedUser }) {
   console.log(currentUser);
+  console.log(matchedUser);
 
   const chatClient = StreamChat.getInstance("9tbsyvz84awf");
   // const userToken =

@@ -10,6 +10,7 @@ const Profile = ({ currentUser, setMatchedUser }) => {
     fetch(`http://localhost:3001/users`)
       .then((resp) => resp.json())
       .then((users) => {
+        console.log(users)
         const filteredUsers = users.filter((user) => {
           return user.is_chatting === false;
         });
@@ -18,6 +19,7 @@ const Profile = ({ currentUser, setMatchedUser }) => {
       });
   }, []);
 
+  console.log(allUsers)
   // debugger;
 
   const newConnections = allUsers.filter(
@@ -25,6 +27,8 @@ const Profile = ({ currentUser, setMatchedUser }) => {
   );
 
   console.log("new connections", newConnections);
+
+  // debugger
 
   const matchMaker = () => {
     let collectedArray = [];

@@ -72,7 +72,7 @@ function handleQuestionnaire(e){
         .then((data) => {
           console.log(data)
           setCurrentUser(data)
-          history.push('/chat')
+          history.push('/profile')
         })
 
 }
