@@ -1,10 +1,11 @@
 import React, { useState, useEffect } from "react";
 import { useHistory } from "react-router";
 
-const Profile = ({ currentUser, setMatchedUser }) => {
+const Profile = ({ currentUser, matchedUser, setMatchedUser }) => {
   const [matchArray, setMatchArray] = useState([]);
   const [allUsers, setAllUsers] = useState([]);
   const history = useHistory();
+  console.log(currentUser)
 
   useEffect(() => {
     fetch(`http://localhost:3001/users`)
@@ -87,9 +88,61 @@ const Profile = ({ currentUser, setMatchedUser }) => {
     setMatchedUser(collectedArray[0]);
   };
 
+  function setUserChatting(user1, user2) {
+
+    let matches = [...user1.previous_matches, user2.username]
+    console.log(matches)
+    console.log(user2)
+    console.log(user1)
+
+    fetch(`http://localhost:3001/users/${user1.id}`, {
+      method: 'PATCH',
+        headers: {
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ ...user1, is_chatting: true, previous_matches: matches }),
+        })
+        .then(response => response.json())
+        .then((data) => {
+          console.log(data)
+          // setCurrentUser(data)
+        })
+  };
+
+  console.log(matchedUser)
+
+  function helpTest() {
+    // setTimeout(() => {
+    if (matchedUser) {
+        // /PATCH /user/:id (one for each user)
+        setUserChatting(currentUser.user, matchedUser)
+        setUserChatting(matchedUser, currentUser.user)
+        // push matchedUser into previousMatched array
+        // helpermethod()
+        history.push("/chat");
+    } else {
+        return alert("Sorry no matches for you")
+    }
+  }
+  
+
   const handleClick = () => {
     matchMaker();
-    history.push("/chat");
+    console.log(matchedUser)
+    helpTest()
+    // setTimeout(() => {
+    //   if (matchedUser) {
+    //     // /PATCH /user/:id (one for each user)
+    //     setUserChatting(currentUser.user, matchedUser)
+    //     setUserChatting(matchedUser, currentUser.user)
+    //     // push matchedUser into previousMatched array
+    //     // helpermethod()
+    //     history.push("/chat");
+    //   } else {
+    //     // return "Nobody matched with you loser"
+    //     return alert("Sorry no matches for you")
+    //   }
+    // }, 3000)
   };
 
   return (
