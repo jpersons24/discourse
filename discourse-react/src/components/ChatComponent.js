@@ -29,7 +29,7 @@ function ChatComponent({ currentUser }) {
     },
     userToken
   );
-
+      
   const channel = chatClient.channel("messaging", {members:["conortest5","conortest1"]}, {
     // add as many custom fields as you'd like
     image: "https://www.drupal.org/files/project-images/react.png",
