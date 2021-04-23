@@ -127,7 +127,7 @@ const Profile = ({ currentUser, matchedUser, setMatchedUser,setHasActiveChat, ha
         setUserChatting(matchedUser, currentUser.user)
         setHasActiveChat(true)
     } else {
-        return alert("Sorry no matches for you")
+      return alert("Sorry no matches for you")
     }
   };
 
@@ -145,10 +145,10 @@ const Profile = ({ currentUser, matchedUser, setMatchedUser,setHasActiveChat, ha
 
   return (
     <div>
-      <h1>{currentUser.user.username}</h1>
+      <h1 class='question' align='center'>{currentUser.user.username}</h1>
       {hasActiveChat ? <button onClick={handleEnterChat}>Enter Chat</button> 
       :
-      <button onClick={handleFindChat}>Get Match</button>
+      <button class='submit' align='center' onClick={handleFindChat}>Get Match</button>
       }
     </div>
 

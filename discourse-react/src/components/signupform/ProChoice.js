@@ -1,16 +1,33 @@
-function ProChoice({ handleChange}) {
+function ProChoice({ handleChange, handlePrevious, handleNext, currentStep }) {
 
 
    return (
-      <div>
-         <div>
-            <label>Pro Choice</label>
-            <input type="radio" name="pro_choice" id="pro_choice" value={true} onChange={handleChange}/> 
-         </div>
-         <div>
-            <label>Pro Life</label>
-            <input type="radio" name="pro_choice" id="pro_life" value={false} onChange={handleChange} />
-         </div>
+
+      <div class='login-wrapper'>
+         <div class='question-box'>
+            <p class='question' align='center'>What is your stance on abortion?</p>
+            <select class='un'>
+               <option value="" selected disabled hidden>Choose here</option>
+               <option name="pro_choice" id="pro_choice" value={true} onChange={handleChange}>Pro Choice</option>
+               <option class='un' type="radio" name="pro_choice" id="pro_life" value={false} onChange={handleChange}>Pro Life</option>
+
+            </select>
+
+            <div class="pre-next-buttons">
+               {currentStep > 1 ?
+                  <>
+                     <button class="submit previous" onClick={handlePrevious}>Previous</button>
+                     <button class="submit next" onClick={handleNext}>Next</button>
+
+                  </>
+                  :
+                  null
+               }
+               {/* {currentStep < 13 && currentStep > 0 ?  <button class="submit next" onClick={handleNext}>Next</button> : null} */}
+            </div>
+         </div >
+
+
       </div>
    )
 }

@@ -15,9 +15,9 @@ import FavBook from './FavBook';
 import FavMovie from './FavMovie';
 import FavCity from './FavCity';
 
-function Form({currentUser, setCurrentUser}) {
+function Form({ currentUser, setCurrentUser }) {
   // state for user info values
-const [active, setActive] = useState(false)
+  const [active, setActive] = useState(false)
 
   const [formData, setFormData] = useState({
     username: "",
@@ -32,7 +32,7 @@ const [active, setActive] = useState(false)
     pro_choice: null,
     fav_sport: "",
     fav_cuisine: "",
-    fav_book_genre: "", 
+    fav_book_genre: "",
     fav_city: "",
     fav_movie_genre: "",
   });
@@ -49,7 +49,7 @@ const [active, setActive] = useState(false)
 
   function handleNext(e) {
     e.preventDefault()
-    setCurrentStep((currentStep ) => currentStep + 1);
+    setCurrentStep((currentStep) => currentStep + 1);
   }
 
 
@@ -58,49 +58,49 @@ const [active, setActive] = useState(false)
     setCurrentStep(currentStep - 1);
   }
 
-function handleQuestionnaire(e){
-  e.preventDefault()
+  function handleQuestionnaire(e) {
+    e.preventDefault()
 
-  fetch(`http://localhost:3001/users/${currentUser.user.id}`, {
-        method: 'PATCH',
-        headers: {
-            'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(formData),
-        })
-        .then(response => response.json())
-        .then((data) => {
-          console.log(data)
-          setCurrentUser(data)
-          history.push('/profile')
-        })
+    fetch(`http://localhost:3001/users/${currentUser.user.id}`, {
+      method: 'PATCH',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(formData),
+    })
+      .then(response => response.json())
+      .then((data) => {
+        console.log(data)
+        setCurrentUser(data)
+        history.push('/profile')
+      })
 
-}
+  }
 
   return (
     <div>
-      {currentStep > 0 ? <h1>Info Form</h1> : null}
-        {currentStep === 0 ? <SignUp formData={formData} handleChange={handleChange} currentStep={currentStep} setCurrentStep={setCurrentStep} currentUser={currentUser} setCurrentUser={setCurrentUser}/> : null}
-        <form onSubmit={handleQuestionnaire}>
-          {currentStep === 1 ? <Age formData={formData} handleChange={handleChange} /> : null}
-          {currentStep === 2 ? <Gender formData={formData} handleChange={handleChange}/> : null}
-          {currentStep === 3 ? <Race formData={formData} handleChange={handleChange}/> : null}
-          {currentStep === 4 ? <SexualOrientation formData={formData} handleChange={handleChange}/> : null}
-          {currentStep === 5 ? <Religion formData={formData} handleChange={handleChange}/> : null}
-          {currentStep === 6 ? <ProChoice handleChange={handleChange}/> : null}
-          {currentStep === 7 ? <City handleChange={handleChange}/> : null}
-          {currentStep === 8 ? <FavSport  handleChange={handleChange}/> : null}
-          {currentStep === 9 ? <PoliticalParty handleChange={handleChange}/> : null}
-          {currentStep === 10 ? <FavCuisine handleChange={handleChange}/> : null}
-          {currentStep === 11 ? <FavBook handleChange={handleChange}/> : null}
-          {currentStep === 12 ? <FavMovie handleChange={handleChange}/> : null}
-          {currentStep === 13 ? <FavCity handleChange={handleChange}/> : null}
 
-        
-          {currentStep > 1 ? <button onClick={handlePrevious}>Previous</button> : null}
-          {currentStep < 13 && currentStep > 0 ?  <button onClick={handleNext}>Next</button> : null}
-          {currentStep === 13 ? <button type = "submit">Submit your form</button> : null }
-        </form>
+      {currentStep === 0 ? <SignUp formData={formData} handleChange={handleChange} currentStep={currentStep} setCurrentStep={setCurrentStep} currentUser={currentUser} setCurrentUser={setCurrentUser} /> : null}
+      <form onSubmit={handleQuestionnaire}>
+        {currentStep === 1 ? <Age formData={formData} handleChange={handleChange} handlePrevious={handlePrevious} handleNext={handleNext} currentStep={currentStep} /> : null}
+        {currentStep === 2 ? <Gender formData={formData} handleChange={handleChange} handlePrevious={handlePrevious} handleNext={handleNext} currentStep={currentStep} /> : null}
+        {currentStep === 3 ? <Race formData={formData} handleChange={handleChange} handlePrevious={handlePrevious} handleNext={handleNext} currentStep={currentStep} /> : null}
+        {currentStep === 4 ? <SexualOrientation formData={formData} handleChange={handleChange} handlePrevious={handlePrevious} handleNext={handleNext} currentStep={currentStep} /> : null}
+        {currentStep === 5 ? <Religion formData={formData} handleChange={handleChange} handlePrevious={handlePrevious} handleNext={handleNext} currentStep={currentStep} /> : null}
+        {currentStep === 6 ? <ProChoice handleChange={handleChange} handlePrevious={handlePrevious} handleNext={handleNext} currentStep={currentStep} /> : null}
+        {currentStep === 7 ? <City handleChange={handleChange} handlePrevious={handlePrevious} handleNext={handleNext} currentStep={currentStep} /> : null}
+        {currentStep === 8 ? <FavSport handleChange={handleChange} handlePrevious={handlePrevious} handleNext={handleNext} currentStep={currentStep} /> : null}
+        {currentStep === 9 ? <PoliticalParty handleChange={handleChange} handlePrevious={handlePrevious} handleNext={handleNext} currentStep={currentStep} /> : null}
+        {currentStep === 10 ? <FavCuisine handleChange={handleChange} handlePrevious={handlePrevious} handleNext={handleNext} currentStep={currentStep} /> : null}
+        {currentStep === 11 ? <FavBook handleChange={handleChange} handlePrevious={handlePrevious} handleNext={handleNext} currentStep={currentStep} /> : null}
+        {currentStep === 12 ? <FavMovie handleChange={handleChange} handlePrevious={handlePrevious} handleNext={handleNext} currentStep={currentStep} /> : null}
+        {currentStep === 13 ? <FavCity handleChange={handleChange} handlePrevious={handlePrevious} handleNext={handleNext} currentStep={currentStep} /> : null}
+
+
+        {/* {currentStep > 1 ? <button onClick={handlePrevious}>Previous</button> : null}
+          {currentStep < 13 && currentStep > 0 ?  <button onClick={handleNext}>Next</button> : null} */}
+        {currentStep === 13 ? <button class='submit' align='center' type="submit">Submit your form</button> : null}
+      </form>
     </div>
   );
 }

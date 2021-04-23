@@ -1,32 +1,32 @@
 import { StreamChat } from "stream-chat";
-import { useHistory } from 'react-router-dom';
+import { useHistory, Link } from 'react-router-dom';
 
 function NavBar({ currentUser }) {
 
    const history = useHistory();
    const chatClient = StreamChat.getInstance("9tbsyvz84awf")
-   
+
    function handleClick(e) {
       history.push("/login")
    }
-   
-   return(
+
+   return (
       <div class="nav-wrapper">
-         
-            {currentUser ?<button onClick={handleClick}>Logout</button> : <div> Discourse </div>}
-         
 
-         <div>
-            Dashboard 
-         </div>
+         {currentUser ? <Link onClick={handleClick}>Logout</Link> : <Link> Discourse </Link>}
 
-         <div>
+
+         <Link class="nav-option" to="/profile">
+            Dashboard
+         </Link>
+
+         <Link class="nav-option" to="/profile">
             About
-         </div>
+         </Link>
 
-         <div>
+         <Link class="nav-option" to="/profile">
             Chat
-         </div>
+         </Link>
       </div>
    )
 }

@@ -7,6 +7,7 @@ import Profile from "./components/Profile.js";
 import NavBar from "./components/NavBar";
 import Form from "./components/signupform/Form";
 import { Switch, Route } from "react-router-dom";
+import About from './components/About';
 function App() {
   const [currentUser, setCurrentUser] = useState(null);
   const [matchedUser, setMatchedUser] = useState(null);
@@ -26,7 +27,6 @@ function App() {
 
   return (
     <div class="app-wrapper">
-      <NavBar currentUser={currentUser} />
       <Switch>
         <Route exact path="/">
           <LandingPage />
@@ -37,6 +37,7 @@ function App() {
             matchedUser={matchedUser}
             setMatchedUser={setMatchedUser}
           />
+          <NavBar currentUser={currentUser} />
         </Route>
         <Route exact path="/login">
           <Login setHasActiveChat = {setHasActiveChat} currentUser={currentUser} setCurrentUser={setCurrentUser} />
@@ -52,6 +53,10 @@ function App() {
             setHasActiveChat = {setHasActiveChat}
             hasActiveChat = {hasActiveChat}
           />
+          <NavBar currentUser={currentUser} />
+        </Route>
+        <Route exact path="/about">
+          <About />
         </Route>
       </Switch>
     </div>

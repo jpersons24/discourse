@@ -2,41 +2,211 @@
   box-sizing: border-box;  
 }
 
-html{
+body {
   margin: 0px;
   min-height: 100vh;
 }
 
-body {
+/* body {
   height: 100%;
-  background-color: purple;
-}
+} */
 
 #root {
-  background-color: blue;
+  /* background-color: lightblue; */
   min-height: 100%;
   max-width: 100%;
 }
 
 .app-wrapper {
-  background-color: red;
-  min-height: 100%;
+  /* background-color: rgb(251, 153, 153); */
+  display: grid;
+  grid-template-rows: 8fr 1fr;
+  /* align-items: center; */
+  /* text-align: center; */
+  min-height: 100vh;
+  background-image: linear-gradient(rgba(255, 241, 214, 0.15), rgba(250, 234, 201, 0.383), rgba(193, 220, 250, 0.493));
+
 }
 
 .landing-wrapper {
   height: 100vh;
-  background-color: yellow;
-  background: url(https://www.discourse.org/a/img/logo-card-image.jpg);
+  align-items: center;
+  justify-content: center;
+  /* background-color: lightyellow; */
+  
 }
 
 .nav-wrapper {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
-  background-color: green;
+  /* background-color: lightgreen; */
   height: 5vh;
   align-items: center;
+  text-align: center;
+  font-family: "Permanent Marker";
+  font-size: 25px;
+  font: black;
 } 
 
-.str-chat {
-  height: 20vh;
+.login-wrapper {
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  margin-bottom: 2px;
+  /* background-color: rgb(104, 161, 245); */
+}
+
+.login-box {
+  background-color: #FFFFFF;
+  /* background-image: linear-gradient(rgba(0, 255, 51, 0.15), rgba(0, 255, 213, 0.383), rgba(0, 251, 251, 0.493)); */
+  width: 400px;
+  height: 400px;
+  margin: 7em auto;
+  border-radius: 1.5em;
+  box-shadow: 0px 11px 35px 2px rgba(0, 0, 0, 0.14);
+}
+
+.sign {
+  padding-top: 40px;
+  color: #8C55AA; 
+  font-family: 'Ubuntu', sans-serif;
+  font-weight: bold;
+  font-size: 23px;
+}
+
+.sign-in-form {
+  padding-top: 40px;
+}
+
+.un {
+  width: 76%;
+  color: rgb(38, 50, 56);
+  font-weight: 700;
+  font-size: 14px;
+  letter-spacing: 1px;
+  background: rgba(136, 126, 126, 0.04);
+  padding: 10px 20px;
+  border: none;
+  border-radius: 20px;
+  outline: none;
+  box-sizing: border-box;
+  border: 2px solid rgba(0, 0, 0, 0.02);
+  margin-bottom: 50px;
+  margin-left: 46px;
+  text-align: center;
+  margin-bottom: 27px;
+  font-family: 'Ubuntu', sans-serif;
+}
+
+.pass {
+  width: 76%;
+  color: rgb(38, 50, 56);
+  font-weight: 700;
+  font-size: 14px;
+  letter-spacing: 1px;
+  background: rgba(136, 126, 126, 0.04);
+  padding: 10px 20px;
+  border: none;
+  border-radius: 20px;
+  outline: none;
+  box-sizing: border-box;
+  border: 2px solid rgba(0, 0, 0, 0.02);
+  margin-bottom: 50px;
+  margin-left: 46px;
+  text-align: center;
+  margin-bottom: 27px;
+  font-family: 'Ubuntu', sans-serif;
+}
+
+.submit {
+  cursor: pointer;
+  border-radius: 5em;
+  color: #fff;
+  background: linear-gradient(to right, #9C27B0, #E040FB);
+  border: 0;
+  padding-left: 40px;
+  padding-right: 40px;
+  padding-bottom: 10px;
+  padding-top: 10px;
+  font-family: 'Ubuntu', sans-serif;
+  margin-left: 35%;
+  font-size: 13px;
+  box-shadow: 0 0 20px 1px rgba(0, 0, 0, 0.04);
+}
+
+.sign-up-link {
+  text-shadow: 0px 0px 3px rgba(117, 117, 117, 0.12);
+  color: #E1BEE7;
+  padding-top: 15px;
+}
+
+a {
+  text-shadow: 0px 0px 3px rgba(117, 117, 117, 0.12);
+  color: #E1BEE7;
+  text-decoration: none
+}
+
+.question {
+  padding-top: 40px;
+  color: #8C55AA; 
+  font-family: 'Ubuntu', sans-serif;
+  font-weight: bold;
+  font-size: 18px;
+}
+
+.question-box {
+  background-color: #FFFFFF;
+  /* background-image: linear-gradient(rgba(0, 255, 51, 0.15), rgba(0, 255, 213, 0.383), rgba(0, 251, 251, 0.493)); */
+  width: 400px;
+  height: 250px;
+  margin: 7em auto;
+  border-radius: 1.5em;
+  box-shadow: 0px 11px 35px 2px rgba(0, 0, 0, 0.14);
+}
+
+.pre-next-buttons {
+  display: inline-block;
+  text-align: center;
+  justify-content: center;
+  width: 100%;
+}
+ .previous {
+  display: inline-block;
+  float: left;
+  margin-left: 50px;
+ }
+
+ .next {
+  /* width: 30px; */
+  display: inline-block;
+  float: right;
+  margin-right: 50px;
+ }
+
+ .next:hover {
+  background: rgb(159, 255, 159);
+}
+
+.next:active {
+  background: #c0392b;
+  top: 2px;
+}
+
+.next:after {
+  content: '';
+  position: absolute;
+  z-index: -1;
+  -webkit-transition: all 0.3s;
+  -moz-transition: all 0.3s;
+  transition: all 0.3s;
+}
+
+.next:before {
+  /* position: absolute; */
+  /* height: 100%; */
+  /* left: 0;
+  top: 0;
+  line-height: 3;
+  font-size: 140%; */
+  /* width: 60px; */
 }
