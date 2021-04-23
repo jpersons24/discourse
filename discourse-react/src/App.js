@@ -12,18 +12,18 @@ function App() {
   const [currentUser, setCurrentUser] = useState(null);
   const [matchedUser, setMatchedUser] = useState(null);
   const [hasActiveChat, setHasActiveChat] = useState(false)
+  const [allUsers, setAllUsers] = useState([]);
 
-  // useEffect(() => {
-  //   fetch(`http://localhost:3001/users`)
-  //     .then((resp) => resp.json())
-  //     .then((users) => {
-  //       const filteredUsers = users.filter((user) => {
-  //         return user.is_chatting === false;
-  //       });
-  //       console.log(filteredUsers);
-  //       setAllUsers(filteredUsers);
-  //     });
-  // }, []);
+  useEffect(() => {
+    fetch(`http://localhost:3001/users`)
+      .then((resp) => resp.json())
+      .then((users) => {
+        // const filteredUsers = users.filter((user) => {
+        //   return user.is_chatting === false;
+        // });
+        setAllUsers(users);
+      });
+  }, []);
 
   return (
     <div class="app-wrapper">
@@ -52,8 +52,10 @@ function App() {
             setMatchedUser={setMatchedUser}
             setHasActiveChat = {setHasActiveChat}
             hasActiveChat = {hasActiveChat}
+            setCurrentUser={setCurrentUser}
+            allUsers={allUsers}
           />
-          <NavBar currentUser={currentUser} />
+          <NavBar currentUser={currentUser} setCurrentUser={setCurrentUser} />
         </Route>
         <Route exact path="/about">
           <About />
