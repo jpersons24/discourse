@@ -19,10 +19,14 @@ const Profile = ({
     setHasActiveChat(true);
   }
 
-  useEffect(() => {
+  function getNewMatch(){
     fetch(`http://localhost:3001/users/${currentUser.user.id}`)
       .then((resp) => resp.json())
       .then((match) => setMatchedUser(match.user));
+  }
+
+  useEffect(() => {
+    getNewMatch()
   }, []);
 
 

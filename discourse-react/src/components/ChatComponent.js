@@ -1,4 +1,5 @@
 import React from "react";
+import { useHistory } from "react-router";
 import { StreamChat } from "stream-chat";
 import {
   Chat,
@@ -12,15 +13,17 @@ import {
 import { useState } from 'react';
 import "stream-chat-react/dist/css/index.css";
 
-function ChatComponent({ currentUser, matchedUser }) {
-  console.log(currentUser);
-  console.log(matchedUser);
+function ChatComponent({ currentUser, setCurrentUser, matchedUser, setMatchedUser, setHasActiveChat}) {
+  console.log('Current user', currentUser);
+  console.log('Matched user', matchedUser);
   const [showInterest, setShowInterest] = useState(false);
   const [interest, setInterest] = useState("")
   const chatClient = StreamChat.getInstance("9tbsyvz84awf");
   // const userToken =
   // "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoiY3VybHktYmxvY2stOCJ9.tN_s0rO5Lm765N_zuwXJRFzBmUMfksfbEk8LS3ueHkg";
   const userToken = currentUser.token;
+
+  const history = useHistory()
 
   chatClient.connectUser(
     {
@@ -32,7 +35,7 @@ function ChatComponent({ currentUser, matchedUser }) {
     userToken
   );
 
-  // debugger;
+ 
   const channel = chatClient.channel(
     "messaging",
     { members: [currentUser.user.username, matchedUser.username] },
@@ -44,10 +47,30 @@ function ChatComponent({ currentUser, matchedUser }) {
     }
   );
 
+
   function handleClick(e) {
     const randomInterest = matchedUser.interests[Math.floor(Math.random() * matchedUser.interests.length)]
     setInterest(randomInterest)
     setShowInterest(true)
+  }
+
+  function handleEndChat(){
+    console.log("hit")
+    // render different button/not enter chat 
+    // patch backend 
+    channel.delete()
+    fetch(`http://localhost:3001/end_chat/${currentUser.user.id}`)
+      .then((resp) => resp.json())
+      .then((data) => {
+        console.log('curiosity', data)
+        setCurrentUser(data)
+      });
+
+    fetch(`http://localhost:3001/users/${currentUser.user.id}`)
+      .then((resp) => resp.json())
+      .then((match) => setMatchedUser(match.user));
+      setHasActiveChat(false)
+    history.push('/profile')
   }
 
   return (
@@ -59,6 +82,7 @@ function ChatComponent({ currentUser, matchedUser }) {
         <p align="center" class="un">Need a topic to discuss?</p>
         }
         <button class="submit" onClick={handleClick} style={{marginLeft: "25px"}}>Get a similarity</button>
+        <button class="submit" onClick={handleEndChat} style={{marginLeft: "25px"}}>End chat</button>
       </div>
       
       <Chat client={chatClient} theme="messaging light">

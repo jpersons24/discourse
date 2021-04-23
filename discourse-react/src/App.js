@@ -34,8 +34,10 @@ function App() {
         <Route exact path="/chat">
           <ChatComponent
             currentUser={currentUser}
+            setCurrentUser={setCurrentUser}
             matchedUser={matchedUser}
             setMatchedUser={setMatchedUser}
+            setHasActiveChat={setHasActiveChat}
           />
           <NavBar currentUser={currentUser} />
         </Route>
