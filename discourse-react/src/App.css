@@ -19,6 +19,10 @@ body {
 
 .app-wrapper {
   /* background-color: rgb(251, 153, 153); */
+  display: grid;
+  grid-template-rows: 8fr 1fr;
+  /* align-items: center; */
+  /* text-align: center; */
   min-height: 100vh;
   background-image: linear-gradient(rgba(255, 241, 214, 0.15), rgba(250, 234, 201, 0.383), rgba(193, 220, 250, 0.493));
 
@@ -38,6 +42,10 @@ body {
   /* background-color: lightgreen; */
   height: 5vh;
   align-items: center;
+  text-align: center;
+  font-family: "Permanent Marker";
+  font-size: 25px;
+  font: black;
 } 
 
 .login-wrapper {
@@ -174,3 +182,31 @@ a {
   float: right;
   margin-right: 50px;
  }
+
+ .next:hover {
+  background: rgb(159, 255, 159);
+}
+
+.next:active {
+  background: #c0392b;
+  top: 2px;
+}
+
+.next:after {
+  content: '';
+  position: absolute;
+  z-index: -1;
+  -webkit-transition: all 0.3s;
+  -moz-transition: all 0.3s;
+  transition: all 0.3s;
+}
+
+.next:before {
+  /* position: absolute; */
+  /* height: 100%; */
+  /* left: 0;
+  top: 0;
+  line-height: 3;
+  font-size: 140%; */
+  /* width: 60px; */
+}

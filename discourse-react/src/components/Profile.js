@@ -97,15 +97,15 @@ const Profile = ({ currentUser, matchedUser, setMatchedUser }) => {
 
     fetch(`http://localhost:3001/users/${user1.id}`, {
       method: 'PATCH',
-        headers: {
-            'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({ ...user1, is_chatting: true, previous_matches: matches }),
-        })
-        .then(response => response.json())
-        .then((data) => {
-          console.log(data)
-        })
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({ ...user1, is_chatting: true, previous_matches: matches }),
+    })
+      .then(response => response.json())
+      .then((data) => {
+        console.log(data)
+      })
   };
 
   console.log(matchedUser)
@@ -113,17 +113,17 @@ const Profile = ({ currentUser, matchedUser, setMatchedUser }) => {
   function helpTest() {
     // setTimeout(() => {
     if (matchedUser) {
-        // /PATCH /user/:id (one for each user)
-        setUserChatting(currentUser.user, matchedUser)
-        setUserChatting(matchedUser, currentUser.user)
-        // push matchedUser into previousMatched array
-        // helpermethod()
-        history.push("/chat");
+      // /PATCH /user/:id (one for each user)
+      setUserChatting(currentUser.user, matchedUser)
+      setUserChatting(matchedUser, currentUser.user)
+      // push matchedUser into previousMatched array
+      // helpermethod()
+      history.push("/chat");
     } else {
-        return alert("Sorry no matches for you")
+      return alert("Sorry no matches for you")
     }
   }
-  
+
 
   const handleClick = () => {
     matchMaker();
@@ -146,8 +146,8 @@ const Profile = ({ currentUser, matchedUser, setMatchedUser }) => {
 
   return (
     <div>
-      <h1>{currentUser.user.username}</h1>
-      <button onClick={handleClick}>Get Match</button>
+      <h1 class='question' align='center'>{currentUser.user.username}</h1>
+      <button class='submit' align='center' onClick={handleClick}>Get Match</button>
     </div>
   );
 };

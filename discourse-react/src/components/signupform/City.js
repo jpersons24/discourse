@@ -1,4 +1,4 @@
-function City({ handleChange }) {
+function City({ handleChange, handlePrevious, handleNext, currentStep }) {
    return(
       <div class='login-wrapper'>
          <div class='question-box'>
