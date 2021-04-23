@@ -19,6 +19,8 @@ function ChatComponent({ currentUser, setCurrentUser, matchedUser, setMatchedUse
   const [showInterest, setShowInterest] = useState(false);
   const [interest, setInterest] = useState("")
   const chatClient = StreamChat.getInstance("9tbsyvz84awf");
+  const [question, setQuestion] = useState(false)
+  const [showDifferences, setShowDifferences] = useState(false)
   // const userToken =
   // "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoiY3VybHktYmxvY2stOCJ9.tN_s0rO5Lm765N_zuwXJRFzBmUMfksfbEk8LS3ueHkg";
   const userToken = currentUser.token;
@@ -54,17 +56,26 @@ function ChatComponent({ currentUser, setCurrentUser, matchedUser, setMatchedUse
     setShowInterest(true)
   }
 
+
+  function handleModal(){
+    setQuestion(true)
+    // handleEndChat()
+  }
+
   function handleEndChat(){
     console.log("hit")
     // render different button/not enter chat 
     // patch backend 
     channel.delete()
+    setQuestion(true)
+    
     fetch(`http://localhost:3001/end_chat/${currentUser.user.id}`)
       .then((resp) => resp.json())
       .then((data) => {
         console.log('curiosity', data)
         setCurrentUser(data)
       });
+
 
     fetch(`http://localhost:3001/users/${currentUser.user.id}`)
       .then((resp) => resp.json())
@@ -73,6 +84,18 @@ function ChatComponent({ currentUser, setCurrentUser, matchedUser, setMatchedUse
     history.push('/profile')
   }
 
+  const differences = matchedUser.differences.map((diff) => {
+    return (<div>
+      
+      <p>{diff}
+    </p>
+      </div>
+    )
+    
+    
+  })
+  
+  
   return (
     <div>
       <div align="center">
@@ -80,11 +103,35 @@ function ChatComponent({ currentUser, setCurrentUser, matchedUser, setMatchedUse
         <p align="center" class="un">Talk about this: {interest}</p> 
         : 
         <p align="center" class="un">Need a topic to discuss?</p>
-        }
+      }
         <button class="submit" onClick={handleClick} style={{marginLeft: "25px"}}>Get a similarity</button>
-        <button class="submit" onClick={handleEndChat} style={{marginLeft: "25px"}}>End chat</button>
+        <button class="submit" onClick={handleModal} style={{marginLeft: "25px"}}>End chat</button>
       </div>
-      
+      {question ? 
+      <>
+<div class="modal">
+        <div class="modal-content">
+            <div>Did you enjoy your conversation?</div>
+
+            <button onClick={()=> setShowDifferences(true)}>Yes</button>
+            <button onClick={handleEndChat}>No</button>
+        </div>
+    </div>
+  
+    </>
+    :
+    null
+  }
+    {showDifferences ? <div>
+      <h3>Glad you enjoyed your conversation, here are some areas where you differentiated</h3>
+      {differences}
+      <button onClick={handleEndChat}>Menu</button>
+      </div>
+      : 
+      null
+      }
+
+
       <Chat client={chatClient} theme="messaging light">
         <Channel channel={channel}>
           <Window>
