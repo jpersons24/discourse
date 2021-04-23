@@ -21,11 +21,11 @@ function NavBar({ currentUser, setCurrentUser }) {
             Dashboard
          </Link>
 
-         <Link class="nav-option" to="/profile">
+         <Link class="nav-option" to="/about">
             About
          </Link>
 
-         <Link class="nav-option" to="/profile">
+         <Link class="nav-option" to="/chat">
             Chat
          </Link>
       </div>

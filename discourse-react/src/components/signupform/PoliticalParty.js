@@ -6,9 +6,10 @@ function PoliticalParty({ handleChange, handlePrevious, handleNext, currentStep 
             <p class='question' align='center' for="political_party">Political Affiliation:</p>
             <select class='un' onChange={handleChange} name="political_party" id="political_party">
                <option value="" selected disabled hidden>Choose here</option>
-               <option value="Democratic">Democratic</option>
-               <option value="Republican">Republican</option>
-               <option value="Moderate">Moderate</option>
+               <option value="democratic">Democratic</option>
+               <option value="independent">Independent</option>
+               <option value="republican">Republican</option>
+               <option value="other">Other</option>
             </select>
                <div class="pre-next-buttons">
                   {currentStep > 1 ?
@@ -20,7 +21,6 @@ function PoliticalParty({ handleChange, handlePrevious, handleNext, currentStep 
                      :
                      null
                   }
-                  {/* {currentStep < 13 && currentStep > 0 ?  <button class="submit next" onClick={handleNext}>Next</button> : null} */}
                </div>
          </div>
 

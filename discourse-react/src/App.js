@@ -59,6 +59,7 @@ function App() {
         </Route>
         <Route exact path="/about">
           <About />
+          <NavBar currentUser={currentUser} setCurrentUser={setCurrentUser} />
         </Route>
       </Switch>
     </div>

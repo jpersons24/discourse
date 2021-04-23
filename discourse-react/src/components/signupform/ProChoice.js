@@ -18,12 +18,10 @@ function ProChoice({ handleChange, handlePrevious, handleNext, currentStep }) {
                   <>
                      <button class="submit previous" onClick={handlePrevious}>Previous</button>
                      <button class="submit next" onClick={handleNext}>Next</button>
-
                   </>
                   :
                   null
                }
-               {/* {currentStep < 13 && currentStep > 0 ?  <button class="submit next" onClick={handleNext}>Next</button> : null} */}
             </div>
          </div >
 

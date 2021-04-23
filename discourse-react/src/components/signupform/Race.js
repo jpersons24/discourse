@@ -9,12 +9,12 @@ function Race({handleChange, handlePrevious, handleNext, currentStep}){
                 <select class="un" name="race"  onChange={handleChange}>
                  
                  <option value="" selected disabled hidden>Choose here</option>
-                    <option value="white">White</option>
-                    <option value="black">Black</option>
-                    <option value="middle eastern">Middle Eastern</option>
                     <option value= "asian">Asian</option>
+                    <option value="black">Black</option>
                     <option value= "hispanic">Hispanic</option>
+                    <option value="middle eastern">Middle Eastern</option>
                     <option value= "other">Other</option>
+                    <option value="white">White</option>
                 </select>
                 <div class="pre-next-buttons">
                     {currentStep > 1 ? 
