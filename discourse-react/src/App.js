@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import './App.css';
+import 'semantic-ui-css/semantic.min.css'
 import ChatComponent from "./components/ChatComponent.js";
 import Login from "./components/Login.js";
 import LandingPage from "./components/LandingPage.js";

@@ -12,6 +12,7 @@ import {
 } from "stream-chat-react";
 import { useState } from 'react';
 import "stream-chat-react/dist/css/index.css";
+import {Modal} from 'semantic-ui-react';
 
 function ChatComponent({ currentUser, setCurrentUser, matchedUser, setMatchedUser, setHasActiveChat}) {
   console.log('Current user', currentUser);
@@ -21,6 +22,7 @@ function ChatComponent({ currentUser, setCurrentUser, matchedUser, setMatchedUse
   const chatClient = StreamChat.getInstance("9tbsyvz84awf");
   const [question, setQuestion] = useState(false)
   const [showDifferences, setShowDifferences] = useState(false)
+  const [open, setOpen] = useState(false)
   // const userToken =
   // "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoiY3VybHktYmxvY2stOCJ9.tN_s0rO5Lm765N_zuwXJRFzBmUMfksfbEk8LS3ueHkg";
   const userToken = currentUser.token;
@@ -105,31 +107,36 @@ function ChatComponent({ currentUser, setCurrentUser, matchedUser, setMatchedUse
         <p align="center" class="un">Need a topic to discuss?</p>
       }
         <button class="submit" onClick={handleClick} style={{marginLeft: "25px"}}>Get a similarity</button>
-        <button class="submit" onClick={handleModal} style={{marginLeft: "25px"}}>End chat</button>
+        {/* <button id='modal-trigger' class="submit" onClick={handleModal} style={{marginLeft: "25px"}}>End chat</button> */}
       </div>
-      {question ? 
-      <>
-<div class="modal">
-        <div class="modal-content">
-            <div>Did you enjoy your conversation?</div>
+     
+      
+            <Modal basic
+                onClose={() => setOpen(false)}
+                onOpen={() => setOpen(true)}
+                open={open}
+                size='small'
+                trigger={<button id='modal-trigger' class="submit" style={{marginLeft: "25px"}}>End chat</button>}>
+                <div class="login-wrapper" id='myModal'>
+                  <div class="question-box">
+                      <p class='question' align='center'>Did you enjoy your conversation?</p>
 
-            <button onClick={()=> setShowDifferences(true)}>Yes</button>
-            <button onClick={handleEndChat}>No</button>
-        </div>
-    </div>
-  
-    </>
-    :
-    null
-  }
-    {showDifferences ? <div>
-      <h3>Glad you enjoyed your conversation, here are some areas where you differentiated</h3>
-      {differences}
-      <button onClick={handleEndChat}>Menu</button>
-      </div>
-      : 
-      null
-      }
+                      <button class='submit' onClick={()=> setShowDifferences(true)}>Yes</button>
+                      <button class='submit' onClick={handleEndChat}>No</button>
+                  </div>
+                </div>
+                
+                {showDifferences ? 
+                  <div>
+                    <h3>Glad you enjoyed your conversation, here are some areas where you differentiated</h3>
+                    {differences}
+                    <button onClick={handleEndChat}>Menu</button>
+                  </div>
+                  : 
+                  null
+                  }
+              </Modal>
+    
 
 
       <Chat client={chatClient} theme="messaging light">

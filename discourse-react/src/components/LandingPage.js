@@ -11,12 +11,14 @@ function LandingPage(){
     }
 
     return (
-        <div class="landing-wrapper">
-            <h1>Here are our rules:</h1>
-            <h2>1. yada </h2>
-            <h2>2. yada </h2>
-            <h2>3. yada </h2>
-            <button onClick={redirectToSignin}> sign in  </button>
+        <div class='login-wrapper'>
+            <div class="question-box">
+                <h1 class='question' align='center'>Here are our rules:</h1>
+                <p class='question' align='center'>1. yada </p>
+                <p class='question' align='center'>2. yada </p>
+                <p class='question' align='center'>3. yada </p>
+                <button class='submit' onClick={redirectToSignin}> sign in  </button>
+            </div>
         </div>
     )
 }

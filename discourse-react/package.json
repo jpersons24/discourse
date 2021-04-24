@@ -8,6 +8,8 @@
     "react-modal": "^3.13.1",
     "react-router-dom": "^5.2.0",
     "react-scripts": "4.0.3",
+    "semantic-ui-css": "^2.4.1",
+    "semantic-ui-react": "^2.0.3",
     "stream-chat": "^3.1.4",
     "stream-chat-react": "^5.1.7",
     "web-vitals": "^1.0.1"

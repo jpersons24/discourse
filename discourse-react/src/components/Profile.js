@@ -77,12 +77,9 @@ const Profile = ({
       <h1 class="question" align="center">
         {currentUser.user.username}
       </h1>
-      <h2>
-        Your match has these differences {currentUser.user.differences}{" "}
-        {currentUser.user.interests}
-      </h2>
+      
       {hasActiveChat ? (
-        <button onClick={handleEnterChat}>Enter Chat</button>
+        <button class='submit' onClick={handleEnterChat}>Enter Chat</button>
       ) : (
         <button class="submit" align="center" onClick={handleFindChat}>
           Get Match
