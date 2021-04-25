@@ -57,7 +57,7 @@ function Login({ currentUser, setCurrentUser, setHasActiveChat }) {
             placeholder="Password"
             onChange={handleChange}
           />
-          <button class="submit" type="submit">Login</button>
+          <button class="submit" type="submit" align="center">Login</button>
           <br></br>
           <br></br>
           <p align="center"><Link className="sign-up-link" to="/signup"> Sign up </Link></p>

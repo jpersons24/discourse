@@ -42,25 +42,28 @@ body {
   grid-template-columns: 1fr 1fr 1fr 1fr;
   /* background-color: lightgreen; */
   height: 100%;
-  width: 100%;
   align-items: center;
   text-align: center;
   font-family: "Permanent Marker";
   font-size: 25px;
   font: black;
   bottom: 0;
-  background-color: red;
+  background: linear-gradient(to right, #9C27B0, #E040FB);
 } 
 
-.option:hover,
-.option:focus {
-  box-shadow: 0 0.5em 0.5em -0.4em var(--hover);
-  /* transform: translateY(-0.25em); */
+.option {
+  color: white;
 }
 
+/* .option:hover,
+.option:focus {
+  box-shadow: 0 0.5em 0.5em -0.4em var(--hover);
+  /* transform: translateY(-0.25em); 
+} */
+
 .login-wrapper {
-  display: grid;
-  grid-template-rows: 8fr .25fr;
+  /* display: grid;
+  grid-template-rows: 8fr .25fr; */
   align-items: center;
   justify-content: center;
   height: 100%;
@@ -73,7 +76,7 @@ body {
 .login-box {
   background-color: #FFFFFF;
   /* background-image: linear-gradient(rgba(0, 255, 51, 0.15), rgba(0, 255, 213, 0.383), rgba(0, 251, 251, 0.493)); */
-  width: 400px;
+  width: 90%;
   height: 400px;
   margin: 7em auto;
   border-radius: 1.5em;
@@ -167,20 +170,21 @@ body {
 }
 
 #landing-submit {
-  justify-content: center !important;
   cursor: pointer;
   border-radius: 5em;
   color: #fff;
   background: linear-gradient(to right, #9C27B0, #E040FB);
   border: 0;
-  padding-left: 40px;
+  /* padding-left: 40px;
   padding-right: 40px;
   padding-bottom: 10px;
-  padding-top: 10px;
+  padding-top: 10px; */
   font-family: 'Ubuntu', sans-serif;
-  margin-left: 0 !important; 
+  /* margin-left: 0 !important;  */
   font-size: 13px;
   box-shadow: 0 0 20px 1px rgba(0, 0, 0, 0.04);
+  align-items: center;
+  margin-left: 22%;
 }
 
 .sign-up-link {
@@ -218,6 +222,16 @@ a {
   box-shadow: 0px 11px 35px 2px rgba(0, 0, 0, 0.14);
 }
 
+.modal-box {
+  background-color: #FFFFFF;
+  /* background-image: linear-gradient(rgba(0, 255, 51, 0.15), rgba(0, 255, 213, 0.383), rgba(0, 251, 251, 0.493)); */
+  width: 90%;
+  height: 250px;
+  margin: 7em auto;
+  border-radius: 1.5em;
+  box-shadow: 0px 11px 35px 2px rgba(0, 0, 0, 0.14);
+}
+
 .rules-box {
   background-color: #FFFFFF;
   width: 75%;
@@ -225,9 +239,10 @@ a {
   margin: 7em auto;
   border-radius: 1.5em;
   box-shadow: 0px 11px 35px 2px rgba(0, 0, 0, 0.14);
+  align-items: center;
+  justify-content: center;
 }
 
-/* rules-box:webkit:scroll  */
 
 .pre-next-buttons {
   display: inline-block;
