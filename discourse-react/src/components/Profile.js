@@ -73,10 +73,63 @@ const Profile = ({
   console.log("Matched User", matchedUser);
 
   return (
-    <div style={{justifyContent: "center"}}>
-      <h1 class="question" align="center">
-        {currentUser.user.username}
-      </h1>
+    <div style={{justifyContent: "center"}} class="profile-wrapper">
+      <div class="profile-header">
+        <h1 class="question" align="center">
+          {currentUser.user.username}
+        </h1>
+      </div>
+      
+
+      <div class="activity-wrapper">
+        <div class="percentage-wrapper">
+          <div class="percent">
+            <svg>
+              <circle cx="70" cy="70" r="70"></circle>
+              <circle cx="70" cy="70" r="70"></circle>
+            </svg>
+            <div class="number">
+              <h2 class="good">60<span>%</span></h2>
+            </div>
+          </div>
+
+          <div class="percent">
+            <svg>
+              <circle cx="70" cy="70" r="70"></circle>
+              <circle cx="70" cy="70" r="70"></circle>
+            </svg>
+            <div class="number">
+              <h2 class="so-so">20<span>%</span></h2>
+            </div>
+          </div>
+
+          <div class="percent">
+            <svg>
+              <circle cx="70" cy="70" r="70" fill="white"></circle>
+              <circle cx="70" cy="70" r="70"></circle>
+            </svg>
+            <div class="number">
+              <h2 class="bad">20<span>%</span></h2>
+            </div>
+          </div>
+        </div>
+
+        <div class="averages-wrapper">
+          <div class="average">
+            thing 1
+          </div>
+
+          <div class="average">
+            thing 2
+          </div>
+
+          <div class="average">
+            thing 3
+          </div>
+        </div>
+        
+      </div>
+      
       
       {hasActiveChat ? (
         <button class='chat' align="center" onClick={handleEnterChat}>Enter Chat</button>

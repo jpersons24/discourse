@@ -31,7 +31,7 @@ function LandingPage({ currentUser }){
                 <p class='rule' align='center'>3. See Rule #2.</p>
                 {!currentUser ? <button class='submit' id='landing-submit' onClick={redirectToSignin}> sign in  </button> : null}
             </div>
-            {currentUser ? <NavBar /> : null}
+            {/* {currentUser ? <NavBar /> : null} */}
         </div>
     )
 }

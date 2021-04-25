@@ -140,7 +140,8 @@ function ChatComponent({ currentUser, setCurrentUser, matchedUser, setMatchedUse
       <div
         style={{
           margin: "auto",
-          width: "80%",
+          width: "100%",
+          height: "70vh"
         }}
       >
         <Chat client={chatClient} theme="messaging light">
