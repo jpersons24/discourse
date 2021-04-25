@@ -87,14 +87,11 @@ function ChatComponent({ currentUser, setCurrentUser, matchedUser, setMatchedUse
   }
 
   const differences = matchedUser.differences.map((diff) => {
-    return (<div>
-      
-      <p>{diff}
-    </p>
+    return (
+      <div>
+        <p align="center">{diff}</p>
       </div>
     )
-    
-    
   })
   
   
@@ -106,7 +103,7 @@ function ChatComponent({ currentUser, setCurrentUser, matchedUser, setMatchedUse
         : 
         <p align="center" class="un">Need a topic to discuss?</p>
       }
-        <button class="submit" onClick={handleClick} style={{marginLeft: "25px"}}>Get a similarity</button>
+        <button class="chat" align="center" onClick={handleClick} style={{marginLeft: "25px"}}>Get a similarity</button>
         {/* <button id='modal-trigger' class="submit" onClick={handleModal} style={{marginLeft: "25px"}}>End chat</button> */}
       </div>
      
@@ -116,39 +113,47 @@ function ChatComponent({ currentUser, setCurrentUser, matchedUser, setMatchedUse
                 onOpen={() => setOpen(true)}
                 open={open}
                 size='small'
-                trigger={<button id='modal-trigger' class="submit" style={{marginLeft: "25px"}}>End chat</button>}>
+                trigger={<button id='modal-trigger' class="chat" align="center" style={{marginLeft: "25px"}}>End chat</button>}>
                 <div class="login-wrapper" id='myModal'>
                   <div class="question-box">
                       <p class='question' align='center'>Did you enjoy your conversation?</p>
 
-                      <button class='submit' onClick={()=> setShowDifferences(true)}>Yes</button>
-                      <button class='submit' onClick={handleEndChat}>No</button>
+                      <button class='submit' align="center" style={{width: "150px"}} onClick={()=> setShowDifferences(true)}>Yes</button>
+                      <br></br>
+                      <br></br>
+                      <button class='submit' align="center" style={{width: "150px"}} onClick={handleEndChat}>No</button>
                   </div>
+                  {showDifferences ? 
+                    <div >
+                      <h3 align="center">Glad you enjoyed your conversation!</h3>
+                      <h5 align="center">You have different views on the following topics:</h5>
+                      {differences}
+                      <br></br>
+                      <br></br>
+                      <button class="chat" align="center" style={{width: "150px"}} onClick={handleEndChat}>Menu</button>
+                    </div>
+                    : null}
                 </div>
-                
-                {showDifferences ? 
-                  <div>
-                    <h3>Glad you enjoyed your conversation, here are some areas where you differentiated</h3>
-                    {differences}
-                    <button onClick={handleEndChat}>Menu</button>
-                  </div>
-                  : 
-                  null
-                  }
               </Modal>
     
 
-
-      <Chat client={chatClient} theme="messaging light">
-        <Channel channel={channel}>
-          <Window>
-            <ChannelHeader />
-            <MessageList />
-            <MessageInput />
-          </Window>
-          <Thread />
-        </Channel>
-      </Chat>
+      <div
+        style={{
+          margin: "auto",
+          width: "80%",
+        }}
+      >
+        <Chat client={chatClient} theme="messaging light">
+          <Channel channel={channel}>
+            <Window>
+              <ChannelHeader />
+              <MessageList />
+              <MessageInput />
+            </Window>
+            <Thread />
+          </Channel>
+        </Chat>
+      </div>            
     </div>
   );
 }

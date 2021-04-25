@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import './App.css';
-import 'semantic-ui-css/semantic.min.css'
+// import 'semantic-ui-css/semantic.min.css'
 import ChatComponent from "./components/ChatComponent.js";
 import Login from "./components/Login.js";
 import LandingPage from "./components/LandingPage.js";
@@ -30,7 +30,7 @@ function App() {
     <div class="app-wrapper">
       <Switch>
         <Route exact path="/">
-          <LandingPage />
+          <LandingPage currentUser={currentUser} />
         </Route>
         <Route exact path="/chat">
           <ChatComponent
@@ -40,7 +40,7 @@ function App() {
             setMatchedUser={setMatchedUser}
             setHasActiveChat={setHasActiveChat}
           />
-          <NavBar currentUser={currentUser} />
+          <NavBar currentUser={currentUser} setCurrentUser={setCurrentUser} />
         </Route>
         <Route exact path="/login">
           <Login setHasActiveChat = {setHasActiveChat} currentUser={currentUser} setCurrentUser={setCurrentUser} />

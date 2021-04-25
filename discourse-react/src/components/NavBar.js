@@ -21,7 +21,7 @@ function NavBar({ currentUser, setCurrentUser }) {
             Dashboard
          </Link>
 
-         <Link class="nav-option" to="/about">
+         <Link class="nav-option" to="/">
             About
          </Link>
 

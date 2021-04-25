@@ -73,15 +73,15 @@ const Profile = ({
   console.log("Matched User", matchedUser);
 
   return (
-    <div>
+    <div style={{justifyContent: "center"}}>
       <h1 class="question" align="center">
         {currentUser.user.username}
       </h1>
       
       {hasActiveChat ? (
-        <button class='submit' onClick={handleEnterChat}>Enter Chat</button>
+        <button class='chat' align="center" onClick={handleEnterChat}>Enter Chat</button>
       ) : (
-        <button class="submit" align="center" onClick={handleFindChat}>
+        <button class="chat" align="center" onClick={handleFindChat}>
           Get Match
         </button>
       )}

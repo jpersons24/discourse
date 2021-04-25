@@ -69,6 +69,8 @@ function SignUp({currentUser, setCurrentUser, formData, handleChange, currentSte
 
                 { errors ? <div> {errors} </div> : null }
 
+                <br></br>
+                <br></br>
                 <p align="center"> <Link to = "/login"> Already have an account? </Link> </p>
             </div>
         </div>

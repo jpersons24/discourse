@@ -58,6 +58,8 @@ function Login({ currentUser, setCurrentUser, setHasActiveChat }) {
             onChange={handleChange}
           />
           <button class="submit" type="submit">Login</button>
+          <br></br>
+          <br></br>
           <p align="center"><Link className="sign-up-link" to="/signup"> Sign up </Link></p>
         </form>
       </div>
