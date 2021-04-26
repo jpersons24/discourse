@@ -97,16 +97,11 @@ function Form({ currentUser, setCurrentUser }) {
         {currentStep === 13 ? 
         <>
         <FavCity handleChange={handleChange} handlePrevious={handlePrevious} handleNext={handleNext} currentStep={currentStep} /> 
-        <button class='submit' align='center' type="submit">Submit your form</button>
+        <button class='chat' align='center' type="submit">Submit your form</button>
         </>
         : 
         null
         }
-
-
-        {/* {currentStep > 1 ? <button onClick={handlePrevious}>Previous</button> : null}
-          {currentStep < 13 && currentStep > 0 ?  <button onClick={handleNext}>Next</button> : null} */}
-        {/* {currentStep === 13 ? <button class='submit' align='center' type="submit">Submit your form</button> : null} */}
       </form>
     </div>
   );

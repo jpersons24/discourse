@@ -116,10 +116,10 @@ function ChatComponent({ currentUser, setCurrentUser, matchedUser, setMatchedUse
             <div class="modal-box">
                 <p class='question' align='center'>Did you enjoy your conversation?</p>
 
-                <button class='submit' align="center" style={{width: "150px"}} onClick={()=> setShowDifferences(true)}>Yes</button>
+                <button class='chat' align="center" style={{width: "150px"}} onClick={()=> setShowDifferences(true)}>Yes</button>
                 <br></br>
                 <br></br>
-                <button class='submit' align="center" style={{width: "150px"}} onClick={handleEndChat}>No</button>
+                <button class='chat' align="center" style={{width: "150px"}} onClick={handleEndChat}>No</button>
             </div>
             {showDifferences ? 
               <div >
@@ -141,7 +141,7 @@ function ChatComponent({ currentUser, setCurrentUser, matchedUser, setMatchedUse
         style={{
           margin: "auto",
           width: "100%",
-          height: "70vh"
+          height: "20%"
         }}
       >
         <Chat client={chatClient} theme="messaging light">

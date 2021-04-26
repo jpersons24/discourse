@@ -15,8 +15,8 @@ function City({ handleChange, handlePrevious, handleNext, currentStep }) {
                <div class="pre-next-buttons">
                     {currentStep > 1 ? 
                         <>
-                        <button class="submit previous" onClick={handlePrevious}>Previous</button>
-                        <button class="submit next" onClick={handleNext}>Next</button>
+                        <button class="chat previous" onClick={handlePrevious}>Previous</button>
+                        <button class="chat next" onClick={handleNext}>Next</button>
                         </>     
                         : 
                         null

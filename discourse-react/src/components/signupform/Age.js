@@ -11,8 +11,9 @@ function Age({ formData, handleChange, handlePrevious, handleNext, currentStep }
                     value={formData.age}
                     onChange={handleChange}
                 />  
-                {currentStep > 1 ? <button class="submit" onClick={handlePrevious}>Previous</button> : null}
-          {currentStep < 13 && currentStep > 0 ?  <button class="submit next" onClick={handleNext}>Next</button> : null}
+                
+            {currentStep < 13 && currentStep > 0 ?  
+            <button class="chat next" onClick={handleNext}>Next</button> : null}
             </div>        
         </div>
     )

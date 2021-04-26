@@ -49,6 +49,7 @@ body {
   font: black;
   bottom: 0;
   background: linear-gradient(to right, #9C27B0, #E040FB);
+  z-index: 1;
 } 
 
 .option {
@@ -75,6 +76,7 @@ body {
 
 .login-box {
   background-color: #FFFFFF;
+  text-align: center;
   /* background-image: linear-gradient(rgba(0, 255, 51, 0.15), rgba(0, 255, 213, 0.383), rgba(0, 251, 251, 0.493)); */
   width: 90%;
   height: 400px;
@@ -109,7 +111,7 @@ body {
   box-sizing: border-box;
   border: 2px solid rgba(0, 0, 0, 0.02);
   margin-bottom: 50px;
-  margin-left: 46px;
+  /* margin-left: 46px; */
   text-align: center;
   margin-bottom: 27px;
   font-family: 'Ubuntu', sans-serif;
@@ -129,7 +131,7 @@ body {
   box-sizing: border-box;
   border: 2px solid rgba(0, 0, 0, 0.02);
   margin-bottom: 50px;
-  margin-left: 46px;
+  /* margin-left: 46px; */
   text-align: center;
   margin-bottom: 27px;
   font-family: 'Ubuntu', sans-serif;
@@ -146,12 +148,13 @@ body {
   padding-bottom: 10px;
   padding-top: 10px;
   font-family: 'Ubuntu', sans-serif;
-  margin-left: 35%;
+  width: 70px;
   font-size: 13px;
   box-shadow: 0 0 20px 1px rgba(0, 0, 0, 0.04);
 }
 
 .chat {
+  display: block;
   margin: auto !important;
   width: 30%;
   cursor: pointer;
@@ -164,7 +167,6 @@ body {
   padding-bottom: 10px;
   padding-top: 10px;
   font-family: 'Ubuntu', sans-serif;
-  /* margin-left: 35%; */
   font-size: 13px;
   box-shadow: 0 0 20px 1px rgba(0, 0, 0, 0.04);
 }
@@ -205,6 +207,7 @@ a {
   font-family: 'Ubuntu', sans-serif;
   font-weight: bold;
   font-size: 18px;
+  padding-top: 20px;
 }
 
 .rule {
@@ -215,11 +218,13 @@ a {
 .question-box {
   background-color: #FFFFFF;
   /* background-image: linear-gradient(rgba(0, 255, 51, 0.15), rgba(0, 255, 213, 0.383), rgba(0, 251, 251, 0.493)); */
-  width: 400px;
+  text-align: center;
+  width: 80%;
   height: 250px;
   margin: 7em auto;
   border-radius: 1.5em;
   box-shadow: 0px 11px 35px 2px rgba(0, 0, 0, 0.14);
+  padding: 0px 30px;
 }
 
 .modal-box {
@@ -254,13 +259,17 @@ a {
   display: inline-block;
   float: left;
   margin-left: 50px;
+  text-align: center;
+  padding: 10px 10px;
  }
 
  .next {
-  /* width: 30px; */
   display: inline-block;
   float: right;
   margin-right: 50px;
+  width: 30%;
+  text-align: center;
+  padding: 10px 10px;
  }
 
  .next:hover {

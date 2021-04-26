@@ -36,7 +36,7 @@ function LandingPage({ currentUser }){
                 <p class='rule' align='center'>1. Keep an open mind!</p>
                 <p class='rule' align='center'>2. No hate speech.</p>
                 <p class='rule' align='center'>3. See Rule #2.</p>
-                {!currentUser ? <button class='submit' id='landing-submit' align="center" onClick={redirectToSignin}> sign in </button> : null}
+                {!currentUser ? <button class='chat' id='landing-submit' align="center" onClick={redirectToSignin}> sign in </button> : null}
             </div>
         </div>
     )

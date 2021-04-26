@@ -62,7 +62,7 @@ function SignUp({currentUser, setCurrentUser, formData, handleChange, currentSte
                     onChange={handleChange}
                     placeholder="Password"
                 />
-                    <button class="submit" type='submit'>
+                    <button class="chat" type='submit'>
                         Sign Up
                     </button>
                     </form>
