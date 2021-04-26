@@ -83,15 +83,16 @@ const Profile = ({
 
       <div class="activity-wrapper">
         <div class="percentage-wrapper">
-          <div class="percent">
-            <svg>
-              <circle cx="70" cy="70" r="70"></circle>
-              <circle cx="70" cy="70" r="70"></circle>
-            </svg>
-            <div class="number">
-              <h2 class="good">60<span>%</span></h2>
-            </div>
-          </div>
+          {/* NEW CHART STUFF */}
+          {/* <figure class="chart-three animate">
+          <svg role="img" xmlns="http://www.w3.org/2000/svg%22%3E">
+            <title>[title here]</title>
+            <desc>[long description here]</desc>
+            <circle class="circle-background"/>
+            <circle class="circle-foreground"/>
+          </svg>
+          <figcaption>75% of all males like donuts.</figcaption>
+          </figure> */}
 
           <div class="percent">
             <svg>
@@ -99,35 +100,22 @@ const Profile = ({
               <circle cx="70" cy="70" r="70"></circle>
             </svg>
             <div class="number">
-              <h2 class="so-so">20<span>%</span></h2>
+              <h2 class="good">89<span>%</span></h2>
             </div>
-          </div>
-
-          <div class="percent">
-            <svg>
-              <circle cx="70" cy="70" r="70" fill="white"></circle>
-              <circle cx="70" cy="70" r="70"></circle>
-            </svg>
-            <div class="number">
-              <h2 class="bad">20<span>%</span></h2>
-            </div>
-          </div>
+          </div>  
         </div>
 
         <div class="averages-wrapper">
           <div class="average">
-            thing 1
+            <h3>Successful Conversations</h3>
           </div>
+        </div>  
+      </div>
 
-          <div class="average">
-            thing 2
-          </div>
-
-          <div class="average">
-            thing 3
-          </div>
-        </div>
-        
+      <div style={{padding: "5px", textAlign: "center"}}>
+        <h3>Statistics to be aware of!!!</h3>
+        <p><strong>65%</strong> of all adults beleive that political polarization will worsen over the next 30 years.</p>
+        <p><strong>64%</strong> of adults believe that social media negatively affects society.</p>
       </div>
       
       
