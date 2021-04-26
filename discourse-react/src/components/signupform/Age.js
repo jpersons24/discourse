@@ -1,17 +1,20 @@
-function Age({ formData, handleChange }){
+function Age({ formData, handleChange, handlePrevious, handleNext, currentStep }){
     
     return(
-        <div>
-            <label>How old are you?</label>
-            <input 
-                type="number" 
-                name="age" 
-                value={formData.age}
-                onChange={handleChange}
-            />
-            {/* <button onClick={setStep(step - 1)}>Previous<button/>
-            <button onClick={setStep(step + 1)}>Next<button/> */}
-            
+        <div class="login-wrapper">
+            <div class="question-box">
+            <p class="question" align="center"> How old are you? </p>
+                <input 
+                    class="un"
+                    type="number" 
+                    name="age" 
+                    value={formData.age}
+                    onChange={handleChange}
+                />  
+                
+            {currentStep < 13 && currentStep > 0 ?  
+            <button class="chat next" onClick={handleNext}>Next</button> : null}
+            </div>        
         </div>
     )
 };

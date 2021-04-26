@@ -1,38 +1,506 @@
-.App {
-  text-align: center;
+* {
+  box-sizing: border-box;  
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
+body {
+  margin: 0px;
   min-height: 100vh;
-  display: flex;
-  flex-direction: column;
+}
+
+/* body {
+  height: 100%;
+} */
+
+#root {
+  /* background-color: lightblue; */
+  min-height: 100%;
+  max-width: 100%;
+}
+
+.app-wrapper {
+  /* background-color: rgb(251, 153, 153); */
+  display: grid;
+  grid-template-rows: 8fr 1fr;
+  /* align-items: center; */
+  /* text-align: center; */
+  min-height: 100vh;
+  background-image: linear-gradient(rgba(255, 241, 214, 0.15), rgba(250, 234, 201, 0.383), rgba(193, 220, 250, 0.493));
+
+}
+
+.landing-wrapper {
+  height: 100vh;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+  /* background-color: lightyellow; */
+  
+}
+
+.nav-wrapper {
+  position: sticky;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  /* background-color: lightgreen; */
+  height: 100%;
+  align-items: center;
+  text-align: center;
+  font-family: "Permanent Marker";
+  font-size: 25px;
+  font: black;
+  bottom: 0;
+  background: linear-gradient(to right, #9C27B0, #E040FB);
+  z-index: 1;
+} 
+
+.option {
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+/* .option:hover,
+.option:focus {
+  box-shadow: 0 0.5em 0.5em -0.4em var(--hover);
+  /* transform: translateY(-0.25em); 
+} */
+
+.login-wrapper {
+  /* display: grid;
+  grid-template-rows: 8fr .25fr; */
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  margin-bottom: 2px;
+  overflow:scroll;
+  overflow-x:hidden;
+  /* background-color: rgb(104, 161, 245); */
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.login-box {
+  background-color: #FFFFFF;
+  text-align: center;
+  /* background-image: linear-gradient(rgba(0, 255, 51, 0.15), rgba(0, 255, 213, 0.383), rgba(0, 251, 251, 0.493)); */
+  width: 90%;
+  height: 400px;
+  margin: 7em auto;
+  border-radius: 1.5em;
+  box-shadow: 0px 11px 35px 2px rgba(0, 0, 0, 0.14);
 }
+
+.sign {
+  padding-top: 40px;
+  color: #8C55AA; 
+  font-family: 'Ubuntu', sans-serif;
+  font-weight: bold;
+  font-size: 23px;
+}
+
+.sign-in-form {
+  padding-top: 40px;
+}
+
+.un {
+  width: 76%;
+  color: rgb(38, 50, 56);
+  font-weight: 700;
+  font-size: 14px;
+  letter-spacing: 1px;
+  background: rgba(136, 126, 126, 0.04);
+  padding: 10px 20px;
+  border: none;
+  border-radius: 20px;
+  outline: none;
+  box-sizing: border-box;
+  border: 2px solid rgba(0, 0, 0, 0.02);
+  margin-bottom: 50px;
+  /* margin-left: 46px; */
+  text-align: center;
+  margin-bottom: 27px;
+  font-family: 'Ubuntu', sans-serif;
+}
+
+.pass {
+  width: 76%;
+  color: rgb(38, 50, 56);
+  font-weight: 700;
+  font-size: 14px;
+  letter-spacing: 1px;
+  background: rgba(136, 126, 126, 0.04);
+  padding: 10px 20px;
+  border: none;
+  border-radius: 20px;
+  outline: none;
+  box-sizing: border-box;
+  border: 2px solid rgba(0, 0, 0, 0.02);
+  margin-bottom: 50px;
+  /* margin-left: 46px; */
+  text-align: center;
+  margin-bottom: 27px;
+  font-family: 'Ubuntu', sans-serif;
+}
+
+.submit {
+  cursor: pointer;
+  border-radius: 5em;
+  color: #fff;
+  background: linear-gradient(to right, #9C27B0, #E040FB);
+  border: 0;
+  padding-left: 40px;
+  padding-right: 40px;
+  padding-bottom: 10px;
+  padding-top: 10px;
+  font-family: 'Ubuntu', sans-serif;
+  width: 70px;
+  font-size: 13px;
+  box-shadow: 0 0 20px 1px rgba(0, 0, 0, 0.04);
+}
+
+.chat {
+  display: block;
+  margin: auto !important;
+  width: 30%;
+  cursor: pointer;
+  border-radius: 5em;
+  color: #fff;
+  background: linear-gradient(to right, #9C27B0, #E040FB);
+  border: 0;
+  padding-left: 40px;
+  padding-right: 40px;
+  padding-bottom: 10px;
+  padding-top: 10px;
+  font-family: 'Ubuntu', sans-serif;
+  font-size: 13px;
+  box-shadow: 0 0 20px 1px rgba(0, 0, 0, 0.04);
+}
+
+#landing-submit {
+  cursor: pointer;
+  border-radius: 5em;
+  color: #fff;
+  background: linear-gradient(to right, #9C27B0, #E040FB);
+  border: 0;
+  /* padding-left: 40px;
+  padding-right: 40px;
+  padding-bottom: 10px;
+  padding-top: 10px; */
+  font-family: 'Ubuntu', sans-serif;
+  /* margin-left: 0 !important;  */
+  font-size: 13px;
+  box-shadow: 0 0 20px 1px rgba(0, 0, 0, 0.04);
+  align-items: center;
+  margin-left: 22%;
+}
+
+.sign-up-link {
+  text-shadow: 0px 0px 3px rgba(117, 117, 117, 0.12);
+  color: #E1BEE7;
+  padding-top: 15px;
+}
+
+a {
+  text-shadow: 0px 0px 3px rgba(117, 117, 117, 0.12);
+  color: #E1BEE7;
+  text-decoration: none
+}
+
+.question {
+  padding: auto;
+  color: #8C55AA; 
+  font-family: 'Ubuntu', sans-serif;
+  font-weight: bold;
+  font-size: 18px;
+  padding-top: 20px;
+}
+
+.rule {
+  color: #8C55AA; 
+  font-family: 'Ubuntu', sans-serif;
+}
+
+.question-box {
+  background-color: #FFFFFF;
+  /* background-image: linear-gradient(rgba(0, 255, 51, 0.15), rgba(0, 255, 213, 0.383), rgba(0, 251, 251, 0.493)); */
+  text-align: center;
+  width: 80%;
+  height: 250px;
+  margin: 7em auto;
+  border-radius: 1.5em;
+  box-shadow: 0px 11px 35px 2px rgba(0, 0, 0, 0.14);
+  padding: 0px 30px;
+}
+
+.modal-box {
+  background-color: #FFFFFF;
+  /* background-image: linear-gradient(rgba(0, 255, 51, 0.15), rgba(0, 255, 213, 0.383), rgba(0, 251, 251, 0.493)); */
+  width: 90%;
+  height: 250px;
+  margin: 7em auto;
+  border-radius: 1.5em;
+  box-shadow: 0px 11px 35px 2px rgba(0, 0, 0, 0.14);
+}
+
+.rules-box {
+  background-color: #FFFFFF;
+  width: 75%;
+  padding: 35px;
+  margin: 7em auto;
+  border-radius: 1.5em;
+  box-shadow: 0px 11px 35px 2px rgba(0, 0, 0, 0.14);
+  align-items: center;
+  justify-content: center;
+}
+
+
+.pre-next-buttons {
+  display: inline-block;
+  text-align: center;
+  justify-content: center;
+  width: 100%;
+}
+ .previous {
+  display: inline-block;
+  float: left;
+  margin-left: 50px;
+  text-align: center;
+  padding: 10px 10px;
+ }
+
+ .next {
+  display: inline-block;
+  float: right;
+  margin-right: 50px;
+  width: 30%;
+  text-align: center;
+  padding: 10px 10px;
+ }
+
+ .next:hover {
+  background: rgb(159, 255, 159);
+}
+
+.next:active {
+  top: 2px;
+}
+
+.next:after {
+  content: '';
+  position: absolute;
+  z-index: -1;
+  -webkit-transition: all 0.3s;
+  -moz-transition: all 0.3s;
+  transition: all 0.3s;
+}
+
+.next:before {
+  /* position: absolute; */
+  /* height: 100%; */
+  /* left: 0;
+  top: 0;
+  line-height: 3;
+  font-size: 140%; */
+  /* width: 60px; */
+}
+
+.profile-wrapper {
+  display: grid;
+  grid-template-rows: .25fr 3fr 1fr;
+  grid-gap: 1em;
+}
+
+.profile-header {
+  align-items: center;
+  justify-content: center;
+}
+
+.svg {
+  position: relative;
+  width: 150px;
+  height: 150px;
+  z-index: 1000;
+  align-items: center;
+  justify-content: center;
+  background-color: rgb(16, 245, 35);
+}
+
+.svg circle {
+  width: 100%;
+  height: 100%;
+  fill: none;
+  stroke: #fc1010;
+  stroke-width: 10;
+  stroke-linecap: round;
+  transform: translate(5px, 5px);
+}
+
+.percent {
+  position: relative;
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  box-shadow: inset 0 0 50px #000;
+  background: rgb(27, 16, 242);
+  z-index: 1000;
+  align-items: center;
+  justify-content: center;
+}
+
+.percent .number {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  background-color: white;
+}
+
+.percent .number h2 {
+  color: rgb(247, 199, 10);
+  font-weight: 700;
+  font-size: 40px;
+  transition: 0.9s;
+}
+
+.good {
+  color: green;
+}
+
+.so-so {
+  color: rgb(246, 250, 7);
+}
+
+.bad {
+  color: rgb(252, 5, 5);
+}
+
+.activity-wrapper {
+  display: grid;
+  /* grid-template-rows: 1fr 1fr; */
+  grid-template-columns: 1fr 1fr;
+  /* margin: auto; */
+  justify-content: space-evenly;
+  width: 100%;
+  grid-gap: 2em;
+  overflow-x: auto;
+}
+
+.percentage-wrapper {
+  display: grid;
+  /* grid-template-columns: 1fr 1fr 1fr; */
+  grid-template-rows: 1fr;
+  grid-gap: 2em;
+  margin: auto;
+  padding: auto;
+  justify-content: space-evenly;
+}
+
+.averages-wrapper {
+  display: grid;
+  align-items: center;
+  justify-content: center;
+}
+
+.average {
+  align-items: center;
+  justify-content: center;
+}
+
+
+
+/* NEW CHART CSS */
+/* configs:(
+  chart-three: (
+		svgSize: 200px,
+		percentage: 75,
+		strokeWidth: 25px,
+		backgroundColor: #305556,
+		foregroundColor: #389967,
+		labelColor: #c6e8d7,
+		labelFontSize: 2.5rem,
+		duration: 3s,
+		animationDelay: 1s
+  )
+) */
+/* 
+$pi: 3.14;
+$labelData: '';
+@for $i from 0 to 101 {
+    $labelData: $labelData + $i + '%' + '\a';
+}
+
+@each $chart, $param in $configs {
+
+    $c: (map-get($param, svgSize) - map-get($param, strokeWidth)) * $pi;
+    $cOffSet: (map-get($param, percentage)/100)*$c;
+
+    .#{$chart} {
+        width: map-get($param, svgSize);
+        height: map-get($param, svgSize);
+        margin: 0;
+        position: relative;
+
+        &.animate {
+            svg .circle-foreground {
+                animation: offset map-get($param, duration) ease-in-out forwards;
+                animation-delay: map-get($param, animationDelay);
+            }
+            figcaption:after {
+                animation: #{$chart}-label map-get($param, duration) steps(map-get($param, percentage)) forwards;
+                animation-delay: map-get($param, animationDelay);
+            }
+        }
+/* [10:51 AM] */
+/* svg {
+            width: 100%;
+            height: 100%;
+            .circle-background {
+                r: (map-get($param, svgSize) - map-get($param, strokeWidth))/2;
+                cx: 50%;
+                cy: 50%;
+                fill: none;
+                stroke: map-get($param, backgroundColor);
+                stroke-width: map-get($param, strokeWidth);
+            }
+            .circle-foreground {
+                @extend .circle-background;
+                stroke: map-get($param, foregroundColor);
+                stroke-dasharray: $cOffSet $c;
+                stroke-dashoffset: $cOffSet;
+                stroke-linecap: round;
+                transform-origin: 50% 50%;
+                transform: rotate(-90deg);
+            }
+        }
+        figcaption {
+            display: inline-block;
+            width: 100%;
+            height: map-get($param, labelFontSize);
+            overflow: hidden;
+            text-align: center;
+            color: map-get($param, labelColor);
+            position: absolute;
+            top: calc(50% - #{map-get($param, labelFontSize)/2});
+            left: 0;
+            font-size: 0;
+            &:after {
+                display: inline-block;
+                content: $labelData;
+                white-space: pre;
+                font-size: map-get($param, labelFontSize);
+                line-height: map-get($param, labelFontSize);
+            }
+        }
+    }
+@keyframes #{$chart}-label {
+    100% {
+            transform: translateY(map-get($param, labelFontSize) * (-(map-get($param, percentage))));
+        }
+    }
+}
+@keyframes offset {
+    100% {
+        stroke-dashoffset: 0;
+    }
+} */ 
+

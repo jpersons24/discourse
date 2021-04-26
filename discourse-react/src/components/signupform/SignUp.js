@@ -39,40 +39,40 @@ function SignUp({currentUser, setCurrentUser, formData, handleChange, currentSte
     
 
     return (
-        <div>
-            <form onSubmit={handleSubmit} autoComplete="off">
-            <h1>Signup</h1>
-  
-            <label>Username</label>
-            <input
-                type="text"
-                name="username"
-                value={formData.username}
-                onChange={handleChange}
-            />
-    
-    
-            <label>Password</label>
-            <input
-                type="password"
-                name="password"
-                autoComplete="current-password"
-                value={formData.password}
-                onChange={handleChange}
-            />
-                <button type='submit'>
-                    Sign Up
-                </button>
-                </form>
+        <div class="login-wrapper">
+            <div class="login-box">
+                <form onSubmit={handleSubmit} autoComplete="off">
+                <p class="sign" align="center">Sign up</p>
 
-            { errors ? <div> {errors} </div> : null }
+                <input
+                    class="un"
+                    type="text"
+                    name="username"
+                    value={formData.username}
+                    onChange={handleChange}
+                    placeholder="Username"
+                />
 
-                <Link to = "/">
-                    Login 
-                </Link>
+                <input
+                    class="pass"
+                    type="password"
+                    name="password"
+                    autoComplete="current-password"
+                    value={formData.password}
+                    onChange={handleChange}
+                    placeholder="Password"
+                />
+                    <button class="chat" type='submit'>
+                        Sign Up
+                    </button>
+                    </form>
 
-            
-  
+                { errors ? <div> {errors} </div> : null }
+
+                <br></br>
+                <br></br>
+                <p align="center"> <Link to = "/login"> Already have an account? </Link> </p>
+            </div>
         </div>
     )
 }
