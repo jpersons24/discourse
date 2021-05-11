@@ -83,7 +83,7 @@ function ChatComponent({ currentUser, setCurrentUser, matchedUser, setMatchedUse
       .then((resp) => resp.json())
       .then((match) => setMatchedUser(match.user));
       setHasActiveChat(false)
-    history.push('/profile')
+      history.push('/profile')
   }
 
   const differences = matchedUser.differences.map((diff) => {
@@ -102,7 +102,7 @@ function ChatComponent({ currentUser, setCurrentUser, matchedUser, setMatchedUse
         <p align="center" class="un">Talk about this: {interest}</p> 
         : 
         <p align="center" class="un">Need a topic to discuss?</p>
-      }
+        }
         <button class="chat" align="center" onClick={handleClick} style={{marginLeft: "25px"}}>Get a similarity</button>
         {/* <button id='modal-trigger' class="submit" onClick={handleModal} style={{marginLeft: "25px"}}>End chat</button> */}
         <Modal basic

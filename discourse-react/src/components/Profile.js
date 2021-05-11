@@ -21,8 +21,14 @@ const Profile = ({
 
   function getNewMatch(){
     fetch(`http://localhost:3001/users/${currentUser.user.id}`)
-      .then((resp) => resp.json())
-      .then((match) => setMatchedUser(match.user));
+      .then(resp => resp.json())
+      .then((match) => {
+        if (match.status == true) {
+          setMatchedUser(match.user)
+        } else {
+          console.log(match)
+        }
+      })
   }
 
   useEffect(() => {
@@ -42,6 +48,7 @@ const Profile = ({
         ...user1,
         is_chatting: true,
         previous_matches: matches,
+        chatting_with: user2.username,
       }),
     })
       .then((response) => response.json())
