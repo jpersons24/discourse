@@ -83,6 +83,7 @@ function ChatComponent({ currentUser, setCurrentUser, matchedUser, setMatchedUse
       .then((resp) => resp.json())
       .then((match) => setMatchedUser(match.user));
       setHasActiveChat(false)
+      console.log(currentUser)
       history.push('/profile')
   }
 
