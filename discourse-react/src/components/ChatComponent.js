@@ -79,9 +79,10 @@ function ChatComponent({ currentUser, setCurrentUser, matchedUser, setMatchedUse
       });
 
 
-    fetch(`http://localhost:3001/users/${currentUser.user.id}`)
-      .then((resp) => resp.json())
-      .then((match) => setMatchedUser(match.user));
+    // fetch(`http://localhost:3001/users/${currentUser.user.id}`)
+    //   .then((resp) => resp.json())
+    //   .then((match) => setMatchedUser(match.user));
+      setMatchedUser(null)
       setHasActiveChat(false)
       console.log(currentUser)
       history.push('/profile')

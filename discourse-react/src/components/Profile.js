@@ -26,14 +26,14 @@ const Profile = ({
         if (match.status == true) {
           setMatchedUser(match.user)
         } else {
-          console.log(match)
+          console.log("Match", match)
         }
       })
   }
 
   useEffect(() => {
     getNewMatch()
-  }, []);
+  }, [setMatchedUser]);
 
 
   function setUserChatting(user1, user2) {
