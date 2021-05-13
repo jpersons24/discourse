@@ -125,14 +125,24 @@ const Profile = ({
         <p><strong>64%</strong> of adults believe that social media negatively affects society.</p>
       </div>
       
+      {matchedUser && !hasActiveChat ?
+      <div align="center">
+        <p>Congrats you have a match!</p>
+      </div>
+      : null}
       
-      {hasActiveChat ? (
-        <button class='chat' align="center" onClick={handleEnterChat}>Enter Chat</button>
-      ) : (
-        <button class="chat" align="center" onClick={handleFindChat}>
-          Get Match
-        </button>
-      )}
+      <div style={{ padding: "2rem" }}>
+        {hasActiveChat ? (
+          <div align="center">
+            <p>You have an active chat!</p>
+            <button class='chat' align="center" onClick={handleEnterChat}>Enter Chat</button>
+          </div>
+        ) : (
+          <button class="chat" align="center" onClick={handleFindChat}>
+            Get Match
+          </button>
+        )}
+      </div>
     </div>
   );
 };
