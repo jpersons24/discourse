@@ -1,20 +1,34 @@
-function Gender({handleChange, formData}){
+function Gender({handleChange, formData, currentStep, handleNext, handlePrevious}){
     
     return(
-        <div>
-             <label for="gender">What is your gender?</label>
-                <select name="gender" id="gender"  onChange={handleChange}>
-                <option value="" selected disabled hidden>Choose here</option>
-                    <option value="man">Man</option>
-                    <option value="woman">Woman</option>
-                    <option value="non-binary">Non-binary</option>
-                    <option value="trans">Trans</option>
-                </select>
-                {/* <button onClick={setStep(step - 1)}>Previous<button/>
-                <button onClick={setStep(step + 1)}>Next<button/> */}
+        <div class="login-wrapper">
+            <div class="question-box">
+            <p class="question" align="center" for="gender">What is your gender?</p>
+            <select class="un" name="gender" id="gender"  onChange={handleChange}>
+            <option value="" selected disabled hidden>Choose here</option>
+                <option value="man">Man</option>
+                <option value="woman">Woman</option>
+                <option value="non-binary">Non-binary</option>
+                <option value="trans">Trans</option>
+                <option value="other">Other</option>
+            </select>
+            <div class="pre-next-buttons">
+                {currentStep > 1 ? 
+                    <>
+                    <button class="chat previous" onClick={handlePrevious}>Previous</button>
+                    <button class="chat next" onClick={handleNext}>Next</button>      
+                    </>     
+                    : 
+                    null
+                    }
+                    {/* {currentStep < 13 && currentStep > 0 ?  <button class="submit next" onClick={handleNext}>Next</button> : null} */}
+            </div>
+            
+            </div>
             
         </div>
     )
 };
 
 export default Gender;
+

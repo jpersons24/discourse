@@ -1,20 +1,36 @@
 import { StreamChat } from "stream-chat";
-import { useHistory } from 'react-router-dom';
+import { useHistory, Link } from 'react-router-dom';
+import { Icon } from 'semantic-ui-react'
 
-function NavBar({ currentUser }) {
-
-   console.log(currentUser)
+function NavBar({ currentUser, setCurrentUser }) {
 
    const history = useHistory();
    const chatClient = StreamChat.getInstance("9tbsyvz84awf")
-   
+
    function handleClick(e) {
+      setCurrentUser(null)
       history.push("/login")
    }
-   
-   return(
-      <div>
-        {currentUser ?<button onClick={handleClick}>Logout</button> :<h1>Welcome</h1> } 
+
+   return (
+      <div class="nav-wrapper" position="sticky">
+
+         {currentUser ? <Link onClick={handleClick}><Icon name="hand peace icon" className="option" size="large"/></Link> : <Link> Discourse </Link>}
+
+
+         <Link class="nav-option" to="/profile">
+            <Icon name="address card icon" className="option" size="large" />
+            
+         </Link>
+
+         <Link class="nav-option" to="/">
+            <Icon name="info circle" className="option" size="large"/>
+            
+         </Link>
+
+         <Link class="nav-option" to="/chat">
+            <Icon name="rocketchat icon" className="option" size="large"/>
+         </Link>
       </div>
    )
 }
