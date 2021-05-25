@@ -162,8 +162,8 @@ body {
   color: #fff;
   background: linear-gradient(to right, #9C27B0, #E040FB);
   border: 0;
-  padding-left: 40px;
-  padding-right: 40px;
+  /* padding-left: 40px;
+  padding-right: 40px; */
   padding-bottom: 10px;
   padding-top: 10px;
   font-family: 'Ubuntu', sans-serif;
@@ -301,7 +301,7 @@ a {
 
 .profile-wrapper {
   display: grid;
-  grid-template-rows: .25fr 3fr 1fr;
+  grid-template-rows: .25fr 1.5fr .25fr;
   grid-gap: 1em;
 }
 
@@ -385,6 +385,11 @@ a {
   overflow-x: auto;
 }
 
+.carousel-captions {
+  color: red !important;
+
+}
+
 .percentage-wrapper {
   display: grid;
   /* grid-template-columns: 1fr 1fr 1fr; */
@@ -406,6 +411,15 @@ a {
   justify-content: center;
 }
 
+.profile-stats {
+  border: solid;
+  border-color: linear-gradient(to right, #9C27B0, #E040FB);
+}
+
+.enter-chat-box {
+  border: solid;
+  border-color:rgb(16, 245, 35);
+}
 
 
 /* NEW CHART CSS */

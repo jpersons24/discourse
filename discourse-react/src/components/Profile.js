@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { useHistory } from "react-router";
+import Carousel from 'react-bootstrap/Carousel'
 
 const Profile = ({
   currentUser,
@@ -14,6 +15,8 @@ const Profile = ({
   const history = useHistory();
 
   console.log("Current User", currentUser);
+  console.log("Active Chat?", hasActiveChat);
+  console.log("Matched User", matchedUser);
 
   if (currentUser.user.is_chatting && hasActiveChat === false) {
     setHasActiveChat(true);
@@ -76,8 +79,6 @@ const Profile = ({
     history.push("/chat");
   };
 
-  console.log("Active Chat?", hasActiveChat);
-  console.log("Matched User", matchedUser);
 
   return (
     <div style={{justifyContent: "center"}} class="profile-wrapper">
@@ -119,11 +120,25 @@ const Profile = ({
         </div>  
       </div>
 
-      <div style={{padding: "5px", textAlign: "center"}}>
+      <h3 align="center" class="stats-aware-of">Statistics to be aware of!!!</h3> 
+
+      <Carousel controls={false} indicators={false}>
+        <Carousel.Item>
+          <h3 align="center"> 65% </h3>
+          <h3 align="center"> of all adults believe that political polarization will worsen over the next 30 years. </h3>
+    
+        </Carousel.Item>
+        <Carousel.Item>
+          <h3 align="center"> 64% </h3>
+          <h3 align="center"> of adults believe that social media negatively affects society. </h3>
+        </Carousel.Item>
+      </Carousel>
+
+      {/* <div style={{padding: "5px", textAlign: "center"}} class="profile-stats">
         <h3>Statistics to be aware of!!!</h3>
         <p><strong>65%</strong> of all adults beleive that political polarization will worsen over the next 30 years.</p>
         <p><strong>64%</strong> of adults believe that social media negatively affects society.</p>
-      </div>
+      </div> */}
       
       {matchedUser && !hasActiveChat ?
       <div align="center">
@@ -133,7 +148,7 @@ const Profile = ({
       
       <div style={{ padding: "2rem" }}>
         {hasActiveChat ? (
-          <div align="center">
+          <div align="center" class="enter-chat-box">
             <p>You have an active chat!</p>
             <button class='chat' align="center" onClick={handleEnterChat}>Enter Chat</button>
           </div>

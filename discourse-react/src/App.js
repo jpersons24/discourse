@@ -1,6 +1,5 @@
 import { useState, useEffect } from "react";
 import './App.css';
-// import 'semantic-ui-css/semantic.min.css'
 import ChatComponent from "./components/ChatComponent.js";
 import Login from "./components/Login.js";
 import LandingPage from "./components/LandingPage.js";
@@ -9,6 +8,8 @@ import NavBar from "./components/NavBar";
 import Form from "./components/signupform/Form";
 import { Switch, Route } from "react-router-dom";
 import About from './components/About';
+import 'bootstrap/dist/css/bootstrap.min.css';
+
 function App() {
   const [currentUser, setCurrentUser] = useState(null);
   const [matchedUser, setMatchedUser] = useState(null);
