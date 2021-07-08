@@ -41,7 +41,6 @@ function App() {
             setMatchedUser={setMatchedUser}
             setHasActiveChat={setHasActiveChat}
           />
-          {/* <NavBar currentUser={currentUser} setCurrentUser={setCurrentUser} /> */}
         </Route>
         <Route exact path="/login">
           <Login setHasActiveChat = {setHasActiveChat} currentUser={currentUser} setCurrentUser={setCurrentUser} />
@@ -59,11 +58,9 @@ function App() {
             setCurrentUser={setCurrentUser}
             allUsers={allUsers}
           />
-          {/* <NavBar currentUser={currentUser} setCurrentUser={setCurrentUser} /> */}
         </Route>
         <Route exact path="/about">
           <About />
-          {/* <NavBar currentUser={currentUser} setCurrentUser={setCurrentUser} /> */}
         </Route>
       </Switch>
       {currentUser ? <NavBar currentUser={currentUser} setCurrentUser={setCurrentUser}/> : null}

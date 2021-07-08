@@ -81,9 +81,9 @@ const Profile = ({
 
 
   return (
-    <div style={{justifyContent: "center"}} class="profile-wrapper">
+    <section class="profile-wrapper">
       <div class="profile-header">
-        <h1 class="question" align="center">
+        <h1 class="profile-name" align="center">
           {currentUser.user.username}
         </h1>
       </div>
@@ -91,26 +91,7 @@ const Profile = ({
 
       <div class="activity-wrapper">
         <div class="percentage-wrapper">
-          {/* NEW CHART STUFF */}
-          {/* <figure class="chart-three animate">
-          <svg role="img" xmlns="http://www.w3.org/2000/svg%22%3E">
-            <title>[title here]</title>
-            <desc>[long description here]</desc>
-            <circle class="circle-background"/>
-            <circle class="circle-foreground"/>
-          </svg>
-          <figcaption>75% of all males like donuts.</figcaption>
-          </figure> */}
-
-          <div class="percent">
-            <svg>
-              <circle cx="70" cy="70" r="70"></circle>
-              <circle cx="70" cy="70" r="70"></circle>
-            </svg>
-            <div class="number">
-              <h2 class="good">89<span>%</span></h2>
-            </div>
-          </div>  
+          <span class="percentage"> 89% </span>  
         </div>
 
         <div class="averages-wrapper">
@@ -120,25 +101,25 @@ const Profile = ({
         </div>  
       </div>
 
-      <h3 align="center" class="stats-aware-of">Statistics to be aware of!!!</h3> 
+      <div class="stats-to-be-aware-of">
+        <h3 align="center" class="stats-aware-of">Statistics to be aware of!!!</h3> 
+        <div class="stat-card-container">
+          <div class="stat-card card-1">
+            <h3 align="center"> 65% </h3>
+            <p align="center"> of all adults believe that political polarization will worsen over the next 30 years. </p>
+          </div>
+        
 
-      <Carousel controls={false} indicators={false}>
-        <Carousel.Item>
-          <h3 align="center"> 65% </h3>
-          <h3 align="center"> of all adults believe that political polarization will worsen over the next 30 years. </h3>
-    
-        </Carousel.Item>
-        <Carousel.Item>
-          <h3 align="center"> 64% </h3>
-          <h3 align="center"> of adults believe that social media negatively affects society. </h3>
-        </Carousel.Item>
-      </Carousel>
+          <div class="stat-card card-2">
+            <h3 align="center"> 64% </h3>
+            <p align="center"> of adults believe that social media negatively affects society. </p>
+          </div>
+        </div>
+        
+        
+      </div>
+      
 
-      {/* <div style={{padding: "5px", textAlign: "center"}} class="profile-stats">
-        <h3>Statistics to be aware of!!!</h3>
-        <p><strong>65%</strong> of all adults beleive that political polarization will worsen over the next 30 years.</p>
-        <p><strong>64%</strong> of adults believe that social media negatively affects society.</p>
-      </div> */}
       
       {matchedUser && !hasActiveChat ?
       <div align="center">
@@ -146,7 +127,7 @@ const Profile = ({
       </div>
       : null}
       
-      <div style={{ padding: "2rem" }}>
+      <div>
         {hasActiveChat ? (
           <div align="center" class="enter-chat-box">
             <p>You have an active chat!</p>
@@ -158,7 +139,7 @@ const Profile = ({
           </button>
         )}
       </div>
-    </div>
+    </section>
   );
 };
 

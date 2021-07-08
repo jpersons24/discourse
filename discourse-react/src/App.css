@@ -3,28 +3,18 @@
 }
 
 body {
-  margin: 0px;
+  /* margin: 0px; */
   min-height: 100vh;
 }
 
-/* body {
-  height: 100%;
-} */
-
 #root {
-  /* background-color: lightblue; */
   min-height: 100%;
   max-width: 100%;
 }
 
 .app-wrapper {
-  /* background-color: rgb(251, 153, 153); */
-  /* display: grid;
-  grid-template-rows: 8fr 1fr; */
-  /* align-items: center; */
-  /* text-align: center; */
   min-height: 100vh;
-  background-image: linear-gradient(rgba(255, 241, 214, 0.15), rgba(250, 234, 201, 0.383), rgba(193, 220, 250, 0.493));
+  background-color: rgba(255, 241, 214, 0.15);
 
 }
 
@@ -32,35 +22,33 @@ body {
   height: 100vh;
   align-items: center;
   justify-content: center;
-  /* background-color: lightyellow; */
-  
 }
 
 .nav-wrapper {
   position: sticky;
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
-  /* background-color: lightgreen; */
-  height: 100%;
+  /* display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr; */
+  display: flex;
+  justify-content: center;
   align-items: center;
-  text-align: center;
+  height: calc(3rem + 3vh);
   font-family: "Permanent Marker";
-  font-size: 25px;
-  font: black;
+  font-size: 2rem;
   bottom: 0;
   background: linear-gradient(to right, #9C27B0, #E040FB);
-  z-index: 1;
 } 
+
+.option-box {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
 
 .option {
   color: white;
 }
-
-/* .option:hover,
-.option:focus {
-  box-shadow: 0 0.5em 0.5em -0.4em var(--hover);
-  /* transform: translateY(-0.25em); 
-} */
 
 .login-wrapper {
   display: flex;
@@ -68,7 +56,6 @@ body {
   align-items: center;
   justify-content: center;
   height: 100vh;
-  /* margin-bottom: 2px; */
   overflow:scroll;
   overflow-x:hidden;
 }
@@ -81,14 +68,12 @@ body {
   text-align: center;
   width: calc(18rem + 10vw);
   height: calc(18rem + 10vh);
-  /* margin: 7em auto; */
   margin-bottom: ;
   border-radius: 1.5em;
   box-shadow: 0px 11px 35px 2px rgba(0, 0, 0, 0.14);
 }
 
 .sign {
-  /* padding-top: 40px; */
   color: #8C55AA; 
   font-family: 'Ubuntu', sans-serif;
   font-weight: bold;
@@ -120,44 +105,6 @@ body {
   font-family: 'Ubuntu', sans-serif;
 }
 
-/* .un {
-  width: calc(15rem + 5vw);
-  color: rgb(38, 50, 56);
-  font-weight: 700;
-  font-size: 14px;
-  letter-spacing: 1px;
-  background: rgba(136, 126, 126, 0.04);
-  padding: 10px 20px;
-  border: none;
-  border-radius: 20px;
-  outline: none;
-  box-sizing: border-box;
-  border: 2px solid rgba(0, 0, 0, 0.02);
-  margin-bottom: 50px;
-  /* margin-left: 46px; */
-  /* text-align: center;
-  margin-bottom: 27px;
-  font-family: 'Ubuntu', sans-serif;
-}
-
-.pass {
-  width: calc(15rem + 5vw);
-  color: rgb(38, 50, 56);
-  font-weight: 700;
-  font-size: 14px;
-  letter-spacing: 1px;
-  background: rgba(136, 126, 126, 0.04);
-  padding: 10px 20px;
-  border: none;
-  border-radius: 20px;
-  outline: none;
-  box-sizing: border-box;
-  border: 2px solid rgba(0, 0, 0, 0.02);
-  margin-bottom: 27px;
-  text-align: center;
-  margin-bottom: 27px;
-  font-family: 'Ubuntu', sans-serif;
-} */ 
 
 .submit {
   cursor: pointer;
@@ -184,8 +131,6 @@ body {
   color: #fff;
   background: linear-gradient(to right, #9C27B0, #E040FB);
   border: 0;
-  /* padding-left: 40px;
-  padding-right: 40px; */
   padding-bottom: 10px;
   padding-top: 10px;
   font-family: 'Ubuntu', sans-serif;
@@ -199,12 +144,7 @@ body {
   color: #fff;
   background: linear-gradient(to right, #9C27B0, #E040FB);
   border: 0;
-  /* padding-left: 40px;
-  padding-right: 40px;
-  padding-bottom: 10px;
-  padding-top: 10px; */
   font-family: 'Ubuntu', sans-serif;
-  /* margin-left: 0 !important;  */
   font-size: 13px;
   box-shadow: 0 0 20px 1px rgba(0, 0, 0, 0.04);
   align-items: center;
@@ -239,7 +179,6 @@ a {
 
 .question-box {
   background-color: #FFFFFF;
-  /* background-image: linear-gradient(rgba(0, 255, 51, 0.15), rgba(0, 255, 213, 0.383), rgba(0, 251, 251, 0.493)); */
   text-align: center;
   width: 80%;
   height: 250px;
@@ -251,7 +190,6 @@ a {
 
 .modal-box {
   background-color: #FFFFFF;
-  /* background-image: linear-gradient(rgba(0, 255, 51, 0.15), rgba(0, 255, 213, 0.383), rgba(0, 251, 251, 0.493)); */
   width: 90%;
   height: 250px;
   margin: 7em auto;
@@ -311,25 +249,35 @@ a {
   transition: all 0.3s;
 }
 
-.next:before {
-  /* position: absolute; */
-  /* height: 100%; */
-  /* left: 0;
-  top: 0;
-  line-height: 3;
-  font-size: 140%; */
-  /* width: 60px; */
-}
+
 
 .profile-wrapper {
-  display: grid;
-  grid-template-rows: .25fr 1.5fr .25fr;
+  /* display: grid;
+  grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr; */
+  background-color: rgb(255, 255, 255);
+  display: flex;
+  flex-direction: column;
   grid-gap: 1em;
+  height: 100vh;
+  width: 100vw;
+  margin-right: 0px;
+  justify-content: center;
+  align-items: center;
 }
 
 .profile-header {
+  margin-top: 2rem;
   align-items: center;
   justify-content: center;
+  font-weight: 900;
+  font-size: 2rem;
+}
+
+.profile-name {
+  color: #8C55AA;
+  font-size: 3rem;
+  font-weight: 900;
+  /* text-shadow: 2px 2px #bea9c8; */
 }
 
 .svg {
@@ -397,14 +345,43 @@ a {
 }
 
 .activity-wrapper {
-  display: grid;
-  /* grid-template-rows: 1fr 1fr; */
-  grid-template-columns: 1fr 1fr;
-  /* margin: auto; */
+  display: flex;
+  flex-direction: column;
   justify-content: space-evenly;
-  width: 100%;
+  align-items: center;
   grid-gap: 2em;
-  overflow-x: auto;
+  background-color: rgba(193, 220, 250, 0.493);
+  width: 50%;
+}
+
+.stats-to-be-aware-of {
+  display: flex;
+  flex-direction: column;
+}
+
+.stat-card-container {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.stat-card {
+  display: flex;
+  flex-direction: column;
+  width: 10rem;
+  flex-wrap: wrap;
+}
+
+.card-1 {
+  display: flex;
+  flex-wrap: wrap;
+  background-color: seagreen;
+}
+
+.card-2 {
+  display: flex;
+  flex-wrap: wrap;
+  background-color: orangered;
 }
 
 .carousel-captions {
@@ -413,17 +390,16 @@ a {
 }
 
 .percentage-wrapper {
-  display: grid;
-  /* grid-template-columns: 1fr 1fr 1fr; */
-  grid-template-rows: 1fr;
-  grid-gap: 2em;
-  margin: auto;
-  padding: auto;
-  justify-content: space-evenly;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: red solid .5rem;
+  padding: 3rem;
+  border-radius: 50%;
 }
 
 .averages-wrapper {
-  display: grid;
+  display: flex;
   align-items: center;
   justify-content: center;
 }
@@ -444,99 +420,17 @@ a {
 }
 
 
-/* NEW CHART CSS */
-/* configs:(
-  chart-three: (
-		svgSize: 200px,
-		percentage: 75,
-		strokeWidth: 25px,
-		backgroundColor: #305556,
-		foregroundColor: #389967,
-		labelColor: #c6e8d7,
-		labelFontSize: 2.5rem,
-		duration: 3s,
-		animationDelay: 1s
-  )
-) */
-/* 
-$pi: 3.14;
-$labelData: '';
-@for $i from 0 to 101 {
-    $labelData: $labelData + $i + '%' + '\a';
+@media screen and (min-width: 1000px) {
+  .option-box {
+    width: 70rem;
+  }
+
+  .profile-wrapper {
+    display: grid;
+    grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr;
+    grid-gap: 1em;
+    height: 100vh;
+    width: 70rem;
+  }
 }
-
-@each $chart, $param in $configs {
-
-    $c: (map-get($param, svgSize) - map-get($param, strokeWidth)) * $pi;
-    $cOffSet: (map-get($param, percentage)/100)*$c;
-
-    .#{$chart} {
-        width: map-get($param, svgSize);
-        height: map-get($param, svgSize);
-        margin: 0;
-        position: relative;
-
-        &.animate {
-            svg .circle-foreground {
-                animation: offset map-get($param, duration) ease-in-out forwards;
-                animation-delay: map-get($param, animationDelay);
-            }
-            figcaption:after {
-                animation: #{$chart}-label map-get($param, duration) steps(map-get($param, percentage)) forwards;
-                animation-delay: map-get($param, animationDelay);
-            }
-        }
-/* [10:51 AM] */
-/* svg {
-            width: 100%;
-            height: 100%;
-            .circle-background {
-                r: (map-get($param, svgSize) - map-get($param, strokeWidth))/2;
-                cx: 50%;
-                cy: 50%;
-                fill: none;
-                stroke: map-get($param, backgroundColor);
-                stroke-width: map-get($param, strokeWidth);
-            }
-            .circle-foreground {
-                @extend .circle-background;
-                stroke: map-get($param, foregroundColor);
-                stroke-dasharray: $cOffSet $c;
-                stroke-dashoffset: $cOffSet;
-                stroke-linecap: round;
-                transform-origin: 50% 50%;
-                transform: rotate(-90deg);
-            }
-        }
-        figcaption {
-            display: inline-block;
-            width: 100%;
-            height: map-get($param, labelFontSize);
-            overflow: hidden;
-            text-align: center;
-            color: map-get($param, labelColor);
-            position: absolute;
-            top: calc(50% - #{map-get($param, labelFontSize)/2});
-            left: 0;
-            font-size: 0;
-            &:after {
-                display: inline-block;
-                content: $labelData;
-                white-space: pre;
-                font-size: map-get($param, labelFontSize);
-                line-height: map-get($param, labelFontSize);
-            }
-        }
-    }
-@keyframes #{$chart}-label {
-    100% {
-            transform: translateY(map-get($param, labelFontSize) * (-(map-get($param, percentage))));
-        }
-    }
-}
-@keyframes offset {
-    100% {
-        stroke-dashoffset: 0;
-    }
-} */ 
 

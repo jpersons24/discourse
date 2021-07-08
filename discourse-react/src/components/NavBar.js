@@ -13,25 +13,26 @@ function NavBar({ currentUser, setCurrentUser }) {
    }
 
    return (
-      <div class="nav-wrapper" position="sticky">
+      <nav class="nav-wrapper" position="sticky">
+         <div class="option-box">
+            {currentUser ? <Link onClick={handleClick}><Icon name="hand peace icon" className="option" size="large"/></Link> : <Link> Discourse </Link>}
 
-         {currentUser ? <Link onClick={handleClick}><Icon name="hand peace icon" className="option" size="large"/></Link> : <Link> Discourse </Link>}
+            <Link class="nav-option" to="/profile">
+               <Icon name="address card icon" className="option" size="large" />
+               
+            </Link>
 
+            <Link class="nav-option" to="/">
+               <Icon name="info circle" className="option" size="large"/>
+               
+            </Link>
 
-         <Link class="nav-option" to="/profile">
-            <Icon name="address card icon" className="option" size="large" />
-            
-         </Link>
-
-         <Link class="nav-option" to="/">
-            <Icon name="info circle" className="option" size="large"/>
-            
-         </Link>
-
-         <Link class="nav-option" to="/chat">
-            <Icon name="rocketchat icon" className="option" size="large"/>
-         </Link>
-      </div>
+            <Link class="nav-option" to="/chat">
+               <Icon name="rocketchat icon" className="option" size="large"/>
+            </Link>
+         </div>
+         
+      </nav>
    )
 }
 
