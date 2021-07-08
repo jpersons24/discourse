@@ -19,8 +19,8 @@ body {
 
 .app-wrapper {
   /* background-color: rgb(251, 153, 153); */
-  display: grid;
-  grid-template-rows: 8fr 1fr;
+  /* display: grid;
+  grid-template-rows: 8fr 1fr; */
   /* align-items: center; */
   /* text-align: center; */
   min-height: 100vh;
@@ -63,23 +63,21 @@ body {
 } */
 
 .login-wrapper {
-  /* display: grid;
-  grid-template-rows: 8fr .25fr; */
+  display: flex;
+  
   align-items: center;
   justify-content: center;
-  height: 100%;
-  margin-bottom: 2px;
+  height: 100vh;
+  /* margin-bottom: 2px; */
   overflow:scroll;
   overflow-x:hidden;
-  /* background-color: rgb(104, 161, 245); */
 }
 
 .login-box {
   background-color: #FFFFFF;
   text-align: center;
-  /* background-image: linear-gradient(rgba(0, 255, 51, 0.15), rgba(0, 255, 213, 0.383), rgba(0, 251, 251, 0.493)); */
-  width: 90%;
-  height: 400px;
+  width: calc(18rem + 10vw);
+  height: calc(18rem + 10vh);
   margin: 7em auto;
   border-radius: 1.5em;
   box-shadow: 0px 11px 35px 2px rgba(0, 0, 0, 0.14);
