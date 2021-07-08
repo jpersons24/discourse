@@ -39,7 +39,7 @@ function Login({ currentUser, setCurrentUser, setHasActiveChat }) {
   return (
     <div className="login-wrapper">
       <div class="login-box">
-        <p class="sign" align="center"> Sign in </p>
+        <h3 class="sign" align="center"> Sign in </h3>
         <form class="sign-in-form" onSubmit={handleSubmit}>
           <input
             class="un"
