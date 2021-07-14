@@ -3,7 +3,6 @@
 }
 
 body {
-  /* margin: 0px; */
   min-height: 100vh;
 }
 
@@ -14,8 +13,8 @@ body {
 
 .app-wrapper {
   min-height: 100vh;
+  min-width: 100vw;
   background-color: rgba(255, 241, 214, 0.15);
-
 }
 
 .landing-wrapper {
@@ -232,9 +231,6 @@ a {
   padding: 10px 10px;
  }
 
- .next:hover {
-  background: rgb(159, 255, 159);
-}
 
 .next:active {
   top: 2px;
@@ -252,21 +248,24 @@ a {
 
 
 .profile-wrapper {
-  /* display: grid;
-  grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr; */
-  background-color: rgb(255, 255, 255);
   display: flex;
   flex-direction: column;
-  grid-gap: 1em;
   height: 100vh;
   width: 100vw;
-  margin-right: 0px;
   justify-content: center;
   align-items: center;
+  margin: 0px;
+}
+
+.profile-container {
+  display: grid;
+  grid-template-rows: .5fr 1fr 1fr 1fr;
+  grid-gap: 1em;
+  height: calc(100vh - (3rem + 3vh));
+  width: calc(30rem + 10vw);
 }
 
 .profile-header {
-  margin-top: 2rem;
   align-items: center;
   justify-content: center;
   font-weight: 900;
@@ -277,7 +276,7 @@ a {
   color: #8C55AA;
   font-size: 3rem;
   font-weight: 900;
-  /* text-shadow: 2px 2px #bea9c8; */
+  text-shadow: 2px 2px #c8c6a9;
 }
 
 .svg {
@@ -300,50 +299,6 @@ a {
   transform: translate(5px, 5px);
 }
 
-.percent {
-  position: relative;
-  width: 150px;
-  height: 150px;
-  border-radius: 50%;
-  box-shadow: inset 0 0 50px #000;
-  background: rgb(27, 16, 242);
-  z-index: 1000;
-  align-items: center;
-  justify-content: center;
-}
-
-.percent .number {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  border-radius: 50%;
-  background-color: white;
-}
-
-.percent .number h2 {
-  color: rgb(247, 199, 10);
-  font-weight: 700;
-  font-size: 40px;
-  transition: 0.9s;
-}
-
-.good {
-  color: green;
-}
-
-.so-so {
-  color: rgb(246, 250, 7);
-}
-
-.bad {
-  color: rgb(252, 5, 5);
-}
-
 .activity-wrapper {
   display: flex;
   flex-direction: column;
@@ -351,7 +306,7 @@ a {
   align-items: center;
   grid-gap: 2em;
   background-color: rgba(193, 220, 250, 0.493);
-  width: 50%;
+  width: 100%;
 }
 
 .stats-to-be-aware-of {
@@ -359,10 +314,16 @@ a {
   flex-direction: column;
 }
 
+.stats-to-be-aware-of h3 {
+  font-family: 'Noto Sans TC', sans-serif;
+  
+}
+
 .stat-card-container {
-  width: 100%;
   display: flex;
-  justify-content: space-between;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding: 2rem
 }
 
 .stat-card {
@@ -370,18 +331,42 @@ a {
   flex-direction: column;
   width: 10rem;
   flex-wrap: wrap;
+  background: white;
+  height: calc(10rem + 3vw);
+  width: calc(10rem + 3vw);
+  border-radius: 1.5em;
+  box-shadow: 0px 11px 35px 2px rgba(0, 0, 0, 0.14);
+  padding: 1rem;
+  line-height: 1.8rem;
+  flex-grow: 0;
+}
+
+
+
+.stat-card:hover,
+.stat-card:focus {
+  box-shadow: 0.1em 0.2em 0.4em 0.1em rgb(217, 0, 255);
+  transform: translateY(-0.25em);
 }
 
 .card-1 {
   display: flex;
   flex-wrap: wrap;
-  background-color: seagreen;
 }
 
 .card-2 {
   display: flex;
   flex-wrap: wrap;
-  background-color: orangered;
+}
+
+.card-3 {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.card-4 {
+  display: flex;
+  flex-wrap: wrap;
 }
 
 .carousel-captions {
@@ -426,11 +411,35 @@ a {
   }
 
   .profile-wrapper {
-    display: grid;
-    grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr;
-    grid-gap: 1em;
+    display: flex;
+    flex-direction: column;
     height: 100vh;
-    width: 70rem;
+    width: 100vw;
+    justify-content: flex-start;
+    align-items: center;
   }
+
+  .profile-container {
+    display: flex;
+    flex-direction: column;
+    width: 70rem;
+    height: calc(100vh - (3rem + 3vh));
+    justify-content: space-between;
+    padding: 2rem;
+  }
+
+  .nav-wrapper {
+    position: sticky;
+    /* display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: calc(3rem + 3vh);
+    font-family: "Permanent Marker";
+    font-size: 2rem;
+    bottom: 0;
+    background: linear-gradient(to right, #9C27B0, #E040FB);
+  } 
 }
 

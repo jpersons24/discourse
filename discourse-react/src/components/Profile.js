@@ -81,65 +81,74 @@ const Profile = ({
 
 
   return (
-    <section class="profile-wrapper">
-      <div class="profile-header">
-        <h1 class="profile-name" align="center">
-          {currentUser.user.username}
-        </h1>
-      </div>
-      
-
-      <div class="activity-wrapper">
-        <div class="percentage-wrapper">
-          <span class="percentage"> 89% </span>  
-        </div>
-
-        <div class="averages-wrapper">
-          <div class="average">
-            <h3>Successful Conversations</h3>
-          </div>
-        </div>  
-      </div>
-
-      <div class="stats-to-be-aware-of">
-        <h3 align="center" class="stats-aware-of">Statistics to be aware of!!!</h3> 
-        <div class="stat-card-container">
-          <div class="stat-card card-1">
-            <h3 align="center"> 65% </h3>
-            <p align="center"> of all adults believe that political polarization will worsen over the next 30 years. </p>
-          </div>
-        
-
-          <div class="stat-card card-2">
-            <h3 align="center"> 64% </h3>
-            <p align="center"> of adults believe that social media negatively affects society. </p>
-          </div>
+    <main class="profile-wrapper">
+      <section class="profile-container">
+        <div class="profile-header">
+          <h1 class="profile-name" align="center">
+            {currentUser.user.username}
+          </h1>
         </div>
         
-        
-      </div>
-      
 
-      
-      {matchedUser && !hasActiveChat ?
-      <div align="center">
-        <p>Congrats you have a match!</p>
-      </div>
-      : null}
-      
-      <div>
-        {hasActiveChat ? (
-          <div align="center" class="enter-chat-box">
-            <p>You have an active chat!</p>
-            <button class='chat' align="center" onClick={handleEnterChat}>Enter Chat</button>
+        <div class="activity-wrapper">
+          <div class="percentage-wrapper">
+            <span class="percentage"> 89% </span>  
           </div>
-        ) : (
-          <button class="chat" align="center" onClick={handleFindChat}>
-            Get Match
-          </button>
-        )}
-      </div>
-    </section>
+
+          <div class="averages-wrapper">
+            <div class="average">
+              <h3>Successful Conversations</h3>
+            </div>
+          </div>  
+        </div>
+
+        <div class="stats-to-be-aware-of">
+          <h3 align="center" class="stats-header">Statistics to be aware of!!!</h3> 
+          <div class="stat-card-container">
+            <div class="stat-card card-1">
+              <h3 align="center"> 65% </h3>
+              <p align="center"> of all adults believe that political polarization will worsen over the next 30 years. </p>
+            </div>
+          
+
+            <div class="stat-card card-2">
+              <h3 align="center"> 64% </h3>
+              <p align="center"> of adults believe that social media negatively affects society. </p>
+            </div>
+
+            <div class="stat-card card-3">
+              <h3 align="center"> 26% </h3>
+              <p align="center"> of adults say they SOMETIMES get their news from social media. </p>
+            </div>
+
+            <div class="stat-card card-4">
+              <h3 align="center"> 28% </h3>
+              <p align="center"> of adults say they OFTEN get their news from social media. </p>
+            </div>
+          </div>
+        </div>
+      
+        
+        <div class="have-a-match">
+          {matchedUser && !hasActiveChat ?
+          <div align="center">
+            <p>Congrats you have a match!</p>
+          </div>
+          : null}
+
+          {hasActiveChat ? (
+            <div align="center" class="enter-chat-box">
+              <p>You have an active chat!</p>
+              <button class='chat' align="center" onClick={handleEnterChat}>Enter Chat</button>
+            </div>
+          ) : (
+            <button class="chat" align="center" onClick={handleFindChat}>
+              Get Match
+            </button>
+          )}
+        </div>
+      </section>
+    </main>
   );
 };
 

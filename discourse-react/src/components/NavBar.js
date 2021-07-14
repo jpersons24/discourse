@@ -13,7 +13,7 @@ function NavBar({ currentUser, setCurrentUser }) {
    }
 
    return (
-      <nav class="nav-wrapper" position="sticky">
+      <nav class="nav-wrapper">
          <div class="option-box">
             {currentUser ? <Link onClick={handleClick}><Icon name="hand peace icon" className="option" size="large"/></Link> : <Link> Discourse </Link>}
 
