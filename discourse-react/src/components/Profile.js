@@ -14,10 +14,6 @@ const Profile = ({
 
   const history = useHistory();
 
-  console.log("Current User", currentUser);
-  console.log("Active Chat?", hasActiveChat);
-  console.log("Matched User", matchedUser);
-
   if (currentUser.user.is_chatting && hasActiveChat === false) {
     setHasActiveChat(true);
   }
@@ -91,15 +87,42 @@ const Profile = ({
         
 
         <div class="activity-wrapper">
-          <div class="percentage-wrapper">
-            <span class="percentage"> 89% </span>  
-          </div>
 
-          <div class="averages-wrapper">
-            <div class="average">
-              <h3>Successful Conversations</h3>
+          <div class="activity-card activity-1">
+            <div class="percentage-wrapper">
+              <span class="percentage"> 89% </span>  
+            </div>
+
+            <div class="averages-wrapper">
+              <div class="average">
+                <h3>Successful Conversations</h3>
+              </div>
             </div>
           </div>  
+
+          <div class="activity-card activity-2">
+            <div class="percentage-wrapper">
+              <span class="percentage"> 89% </span>  
+            </div>
+
+            <div class="averages-wrapper">
+              <div class="average">
+                <h3>Successful Conversations</h3>
+              </div>
+            </div>
+          </div> 
+
+          <div class="activity-card activity-3">
+            <div class="percentage-wrapper">
+              <span class="percentage"> 89% </span>  
+            </div>
+
+            <div class="averages-wrapper">
+              <div class="average">
+                <h3>Successful Conversations</h3>
+              </div>
+            </div>
+          </div> 
         </div>
 
         <div class="stats-to-be-aware-of">

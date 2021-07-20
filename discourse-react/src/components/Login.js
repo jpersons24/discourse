@@ -12,7 +12,6 @@ function Login({ currentUser, setCurrentUser, setHasActiveChat }) {
 
   function handleChange(e) {
     setFormData({ ...formData, [e.target.name]: e.target.value });
-    console.log(e.target.value);
   }
 
   function handleSubmit(e) {
