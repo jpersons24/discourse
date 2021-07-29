@@ -4,7 +4,7 @@ function FavMovie({ handleChange, handlePrevious, handleNext, currentStep }) {
       <div class='login-wrapper'>
          <div class='question-box'>
             <p class='question' align='center' for="fav_movie_genre">Favorite Movie Genre:</p>
-            <select class='un' onChange={handleChange} name="fav_movie_genre" id="favorite_cuisine">
+            <select class='question-input' onChange={handleChange} name="fav_movie_genre" id="favorite_cuisine">
                <option value="" selected disabled hidden>Choose here</option>
                <option value="action">Action</option>
                <option value="comedy">Comedy</option>

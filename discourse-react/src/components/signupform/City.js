@@ -3,7 +3,7 @@ function City({ handleChange, handlePrevious, handleNext, currentStep }) {
       <div class='login-wrapper'>
          <div class='question-box'>
             <p class='question' align='center' for="city">What city are you in?</p>
-               <select class='un' onChange={handleChange} name="city" id="city">
+               <select class='question-input' onChange={handleChange} name="city" id="city">
                   <option value="" selected disabled hidden>Choose here</option>
                   <option value="new york">New York</option>
                   <option value="los angeles">Los Angeles</option>

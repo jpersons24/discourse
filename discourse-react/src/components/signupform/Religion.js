@@ -3,7 +3,7 @@ function Religion({ handleChange, handlePrevious, handleNext, currentStep }) {
         <div class='login-wrapper'>
             <div class='question-box'>
                 <p class='question' align='center' for="religion">Religion:</p>
-                <select class='un' onChange={handleChange} name="religion" id="religion">
+                <select class='question-input' onChange={handleChange} name="religion" id="religion">
                     <option value="" selected disabled hidden>Choose here</option>
                     <option value="buddhist">Buddhist</option>
                     <option value="christian">Christian</option>

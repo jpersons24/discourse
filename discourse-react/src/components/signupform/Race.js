@@ -6,7 +6,7 @@ function Race({handleChange, handlePrevious, handleNext, currentStep}){
 
               {/* <label for="race">Ethnicity/Race</label> */}
               <p class="question" align="center" for="race">What is your race?</p>
-                <select class="un" name="race"  onChange={handleChange}>
+                <select class="question-input" name="race"  onChange={handleChange}>
                  
                  <option value="" selected disabled hidden>Choose here</option>
                     <option value= "asian">Asian</option>

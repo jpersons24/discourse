@@ -6,7 +6,7 @@ function ProChoice({ handleChange, handlePrevious, handleNext, currentStep }) {
       <div class='login-wrapper'>
          <div class='question-box'>
             <p class='question' align='center'>What is your stance on abortion?</p>
-            <select class='un'>
+            <select class='question-input'>
                <option value="" selected disabled hidden>Choose here</option>
                <option name="pro_choice" id="pro_choice" value={true} onChange={handleChange}>Pro Choice</option>
                <option class='un' type="radio" name="pro_choice" id="pro_life" value={false} onChange={handleChange}>Pro Life</option>

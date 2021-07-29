@@ -3,7 +3,7 @@ function FavBook({ handleChange, handlePrevious, handleNext, currentStep }) {
       <div class='login-wrapper'>
          <div class='question-box'>
             <p class='question' align='center' for="fav_book_genre">Favorite Book Genre:</p>
-            <select class='un' onChange={handleChange} name="fav_book_genre" id="fav_book_genre">
+            <select class='question-input' onChange={handleChange} name="fav_book_genre" id="fav_book_genre">
                <option value="" selected disabled hidden>Choose here</option>
                <option value="fantasy">Fantasy</option>
                <option value="fiction">Fiction</option>

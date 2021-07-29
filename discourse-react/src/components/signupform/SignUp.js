@@ -41,7 +41,7 @@ function SignUp({currentUser, setCurrentUser, formData, handleChange, currentSte
     return (
         <div class="login-wrapper">
             <div class="login-box">
-                <form onSubmit={handleSubmit} autoComplete="off">
+                <form class="sign-in-form" onSubmit={handleSubmit} autoComplete="off">
                 <p class="sign" align="center">Sign up</p>
 
                 <input
@@ -69,8 +69,6 @@ function SignUp({currentUser, setCurrentUser, formData, handleChange, currentSte
 
                 { errors ? <div> {errors} </div> : null }
 
-                <br></br>
-                <br></br>
                 <p align="center"> <Link to = "/login"> Already have an account? </Link> </p>
             </div>
         </div>

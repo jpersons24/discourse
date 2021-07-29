@@ -5,7 +5,7 @@ function SexualOrientation({ handleChange, handlePrevious, handleNext, currentSt
 
             <div class='question-box'>
                 <p class='question' align='center' for="sexual_orientation">Sexual Orientation:</p>
-                <select class='un' name="sexual_orientation" id="sexual_orientation" onChange={handleChange}>
+                <select class='question-input' name="sexual_orientation" id="sexual_orientation" onChange={handleChange}>
                     <option value="" selected disabled hidden>Choose here</option>
                     <option value="asexual">Asexual</option>
                     <option value="bi-sexual">Bi-sexual</option>

@@ -4,7 +4,7 @@ function PoliticalParty({ handleChange, handlePrevious, handleNext, currentStep 
       <div class='login-wrapper'>
          <div class='question-box'>
             <p class='question' align='center' for="political_party">Political Affiliation:</p>
-            <select class='un' onChange={handleChange} name="political_party" id="political_party">
+            <select class='question-input' onChange={handleChange} name="political_party" id="political_party">
                <option value="" selected disabled hidden>Choose here</option>
                <option value="democratic">Democratic</option>
                <option value="independent">Independent</option>

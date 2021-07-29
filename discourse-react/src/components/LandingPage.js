@@ -14,7 +14,7 @@ function LandingPage({ currentUser }){
     return (
         <div class='login-wrapper'>
             <div class="rules-box">
-                <h1 class="d-logo"> Discourse </h1>
+                <h1 class="logo"> Discourse </h1>
                 <p align="center">Thanks for coming to Discourse!</p>
                 <h1 align='center'>Here are our rules:</h1>
                 <p class='rule' align='center'>1. Keep an open mind!</p>

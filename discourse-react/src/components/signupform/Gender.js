@@ -4,7 +4,7 @@ function Gender({handleChange, formData, currentStep, handleNext, handlePrevious
         <div class="login-wrapper">
             <div class="question-box">
             <p class="question" align="center" for="gender">What is your gender?</p>
-            <select class="un" name="gender" id="gender"  onChange={handleChange}>
+            <select class="question-input" name="gender" id="gender"  onChange={handleChange}>
             <option value="" selected disabled hidden>Choose here</option>
                 <option value="man">Man</option>
                 <option value="woman">Woman</option>

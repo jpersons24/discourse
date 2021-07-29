@@ -4,7 +4,7 @@ function FavSport({ handleChange, currentStep, handlePrevious, handleNext }) {
       <div class='login-wrapper'>
          <div class='question-box'>
             <p class='question' align='center' for="fav_sport">Favorite Sport:</p>
-            <select class='un' onChange={handleChange} name="fav_sport" id="fav_sport">
+            <select class='question-input' onChange={handleChange} name="fav_sport" id="fav_sport">
                <option value="" selected disabled hidden>Choose here</option>
                <option value="baseball">Baseball</option>
                <option value="basketball">Basketball</option>

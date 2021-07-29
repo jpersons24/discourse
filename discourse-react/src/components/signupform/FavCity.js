@@ -3,7 +3,7 @@ function FavCity({ handleChange, handlePrevious, handleNext, currentStep }) {
       <div class='login-wrapper'>
          <div class='question-box'>
             <p class='question' align='center' for="fav_city">Favorite City:</p>
-            <select class='un' name="fav_city" id="fav_city" onChange={handleChange}>
+            <select class='question-input' name="fav_city" id="fav_city" onChange={handleChange}>
                <option value="" selected disabled hidden>Choose here</option>
                <option value="new york">New York</option>
                <option value="los angeles">Los Angeles</option>

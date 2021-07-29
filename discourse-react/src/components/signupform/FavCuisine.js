@@ -4,7 +4,7 @@ function FavCuisine({ handleChange, handlePrevious, handleNext, currentStep }) {
       <div class='login-wrapper'>
          <div class='question-box'>
             <p class='question' align='center' for="fav_cuisine">Favorite Cuisine:</p>
-            <select class='un' onChange={handleChange} name="fav_cuisine" id="fav_cuisine">
+            <select class='question-input' onChange={handleChange} name="fav_cuisine" id="fav_cuisine">
                <option value="" selected disabled hidden>Choose here</option>
                <option value="chinese">Chinese</option>
                <option value="french">French</option>
