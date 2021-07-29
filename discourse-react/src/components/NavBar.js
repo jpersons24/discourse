@@ -22,7 +22,7 @@ function NavBar({ currentUser, setCurrentUser }) {
                
             </Link>
 
-            <Link class="nav-option" to="/">
+            <Link class="nav-option" to="/about">
                <Icon name="info circle" className="option" size="large"/>
                
             </Link>

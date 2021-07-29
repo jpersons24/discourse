@@ -13,23 +13,7 @@ function LandingPage({ currentUser }){
 
     return (
         <div class='login-wrapper'>
-            <h1 align="center"> Discourse </h1>
             <div class="rules-box">
-                {!currentUser ? 
-                <div>
-                    <h1 align="center">What is Discourse</h1>
-                    <p align="center">Discourse - written or spoken communication or debate.</p>
-                    <p align="center">
-                        Discourse is a place for people to be connected with others and engage in open conversation.
-                        You will be matched with other users based on certain criteria. From that point, it's up to you to engage
-                        with your match, talking about anything and everything. If your conversation needs a little push, we've got you
-                        covered with conversation topics that appeal to both users using an algorithm based approach.
-                        All we ask is you consider and abide by the 'Discourse Guidelines' we've set to ensure
-                        everyone has a pleasant and meaningful experience.
-                    </p> 
-                </div>  
-                    : 
-                null }
                 
                 <p align="center">Thanks for coming to Discourse!</p>
                 <h1 align='center'>Here are our rules:</h1>
