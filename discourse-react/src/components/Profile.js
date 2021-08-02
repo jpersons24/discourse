@@ -88,41 +88,52 @@ const Profile = ({
 
         <div class="activity-wrapper">
 
-          <div class="activity-card activity-1">
-            <div class="percentage-wrapper">
-              <span class="percentage"> 89% </span>  
-            </div>
+          <div class="activity-card-list">
+            <div class="activity-card activity-1">
+              <div class="percentage-wrapper">
+                <span class="percentage"> 89% </span>  
+              </div>
 
-            <div class="averages-wrapper">
-              <div class="average">
-                <h3>Successful Conversations</h3>
+              <div class="averages-wrapper">
+                <div class="average">
+                  <h3>Success!</h3>
+                </div>
+              </div>
+            </div>  
+
+            <div class="activity-card activity-2">
+              <div class="median-year-wrapper">
+                <h3 class="activity-value average-age"> 27 </h3>  
+              </div>
+
+              <div class="averages-wrapper">
+                <div class="average">
+                  <h3>Median age</h3>
+                </div>
+              </div>
+            </div> 
+
+            <div class="activity-card">
+              <div class="activity-value average-time">
+                <h3 class="activity-value"> 6d </h3>  
+              </div>
+
+              <div class="averages-wrapper">
+                <div class="average">
+                  <h3>Avg time </h3>
+                </div>
               </div>
             </div>
-          </div>  
+          </div>
 
-          <div class="activity-card activity-2">
-            <div class="percentage-wrapper">
-              <span class="percentage"> 89% </span>  
-            </div>
+           
 
-            <div class="averages-wrapper">
-              <div class="average">
-                <h3>Successful Conversations</h3>
-              </div>
-            </div>
-          </div> 
-
-          <div class="activity-card activity-3">
-            <div class="percentage-wrapper">
-              <span class="percentage"> 89% </span>  
-            </div>
-
-            <div class="averages-wrapper">
-              <div class="average">
-                <h3>Successful Conversations</h3>
-              </div>
-            </div>
-          </div> 
+          <div class="activity-breakdown">
+            <h2> Activity Breakdown </h2>
+            <p class="breakdown-point"> - Nice! 89% of your conversations lead to meaningful discourse.</p>
+            <p class="breakdown-point"> - The average age of the people you have conversed with is 27 years old.</p>
+            <p class="breakdown-point"> - The average time per discussion is 6 days.</p>
+          </div>
         </div>
 
         <div class="stats-to-be-aware-of">
@@ -161,8 +172,8 @@ const Profile = ({
 
           {hasActiveChat ? (
             <div align="center" class="enter-chat-box">
-              <p>You have an active chat!</p>
-              <button class='chat' align="center" onClick={handleEnterChat}>Enter Chat</button>
+              <p class="enter-chat-message">You have an active chat!</p>
+              <button class='enter-chat' align="center" onClick={handleEnterChat}>Enter Chat</button>
             </div>
           ) : (
             <button class="chat" align="center" onClick={handleFindChat}>
