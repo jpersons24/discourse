@@ -15,7 +15,6 @@ body {
 .app-wrapper {
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center; 
   min-height: 100vh;
   min-width: 100vw;
@@ -595,15 +594,15 @@ a {
 }
 
 .chat-wrapper {
-  height: calc(30rem + 5vw);
-  width: calc(23rem + 5vw);
+  width: 100%;
   border: 1px solid black;
 }
 
 .str-chat__container,
 .str-chat-channel,
 .str-chat__main-panel {
-  height: 50rem;
+  height: 100%;
+  width: 100%;
 }
 
 @media screen and (max-width: 610px){
@@ -641,7 +640,7 @@ a {
   .str-chat__container,
 .str-chat-channel,
 .str-chat__main-panel {
-  height: 60rem;
+  height: 100%;
   width: 100%;
 }
 
